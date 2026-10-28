@@ -105,8 +105,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 /* --------------------------------------------------------------------------
    HOMEPAGE HERO
-   Replace the CSS-generated backdrop with a licensed stage photo if desired.
-   The layered gradients retain readable contrast over almost any image.
+   Personal festival photograph is the hero backdrop. Layered gradients keep
+   the headline readable while preserving the live-festival atmosphere.
    -------------------------------------------------------------------------- */
 .hero {
   position: relative; min-height: min(850px, 100svh); display: flex; align-items: center;
@@ -115,10 +115,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .hero-backdrop {
   position: absolute; z-index: -3; inset: 0;
   background:
-    radial-gradient(ellipse at 74% 42%, rgba(147,26,37,.28), transparent 34%),
-    radial-gradient(ellipse at 69% 75%, rgba(83,14,23,.42), transparent 30%),
-    linear-gradient(115deg, #080809 4%, rgba(8,8,9,.86) 44%, rgba(8,8,9,.28) 100%),
-    url('/images/hero.svg') center / cover no-repeat;
+    linear-gradient(90deg, rgba(8,8,9,.94) 0%, rgba(8,8,9,.76) 37%, rgba(8,8,9,.28) 72%, rgba(8,8,9,.36) 100%),
+    linear-gradient(0deg, rgba(8,8,9,.78) 0%, rgba(8,8,9,.06) 30%, rgba(8,8,9,.28) 100%),
+    url('/images/festival-banner.jpg') center 40% / cover no-repeat;
   transform: scale(1.02);
 }
 .hero-grain {
