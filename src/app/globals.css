@@ -197,11 +197,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .collection-card-bottom p { max-width: 390px; margin: 0 0 18px; color: #c0bdbe; font-size: 11px; line-height: 1.7; }
 .collection-open { display: inline-flex; gap: 10px; align-items: center; font-size: 10px; font-weight: 700; }
 .collection-open span { color: var(--red); }
-.collection-violet .collection-card-image { filter: hue-rotate(36deg); }
+/* .collection-violet .collection-card-image { filter: hue-rotate(36deg); }
 .collection-amber .collection-card-image { filter: sepia(.25); }
 .collection-green .collection-card-image { filter: hue-rotate(95deg); }
 .collection-blue .collection-card-image { filter: hue-rotate(170deg); }
-.collection-orange .collection-card-image { filter: hue-rotate(-20deg); }
+.collection-orange .collection-card-image { filter: hue-rotate(-20deg); } */
 /* .collection-pink .collection-card-image { filter: hue-rotate(300deg); } */
 
 /* --------------------------------------------------------------------------
@@ -595,6 +595,15 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .seen-live-page .seen-live-mobile-card .festival-tag { max-width: 100%; white-space: normal; overflow-wrap: anywhere; box-sizing: border-box; }
   .seen-live-page .seen-live-no-results { margin: 18px 0 48px; padding: 24px 14px; overflow-wrap: anywhere; }
 }
+  @media (max-width: 760px) {
+    .seen-live-page {
+      min-width: 0;
+      width: calc(100% - 36px);
+      max-width: 100%;
+      margin-inline: auto;
+      box-sizing: border-box;
+    }
+  }
 @media (max-width: 360px) {
   .seen-live-page .seen-live-mobile-card { padding: 12px; }
   .seen-live-page .seen-live-mobile-card-top { flex-direction: column; align-items: flex-start; }

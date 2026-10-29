@@ -84,6 +84,13 @@
       "Brutal Assault 2026"
     ]
   },
+    {
+    "name": "Alter Bridge",
+    "count": 1,
+    "festival": [
+      "Hellfest 2014"
+    ]
+  },
   {
     "name": "Amon Amarth",
     "count": 2,
@@ -830,6 +837,13 @@
       "Tolminator Metal Fest 2026"
     ]
   },
+    {
+    "name": "G.O.R.E.G.O.N.Z.O.L.A.",
+    "count": 1,
+    "festival": [
+      "Tolminator Metal Fest 2026"
+    ]
+  }, 
   {
     "name": "Gaerea",
     "count": 2,
@@ -1348,13 +1362,6 @@
     "count": 1,
     "festival": [
       "Brutal Assault 2024"
-    ]
-  },
-  {
-    "name": "Misþyrming",
-    "count": 1,
-    "festival": [
-      "Brutal Assault 2026"
     ]
   },
   {

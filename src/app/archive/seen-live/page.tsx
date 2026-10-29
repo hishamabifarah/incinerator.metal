@@ -46,19 +46,20 @@ export default function BandsSeenLivePage() {
           <p className="section-description">Search by name, choose a festival, or enter an exact sighting count (for example, 2).</p>
         </div>
         <div className="archive-controls seen-live-controls">
-          <label className="search-field"><Search size={17} aria-hidden="true" /><span className="sr-only">Search band names</span>
-            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search bands..." />
-          </label>
           <label className="search-field"><span className="sr-only">Filter by festival</span>
             <select value={festivalQuery} onChange={(event) => setFestivalQuery(event.target.value)}><option value="">All festivals</option>
               {festivalOptions.map((festival) => <option key={festival} value={festival}>{festival}</option>)}
             </select>
           </label>
-          <label className="search-field count-filter-field"><span className="sr-only">Filter by exact number of times seen</span>
-            <input type="number" min="1" step="1" inputMode="numeric" value={countQuery} onChange={(event) => setCountQuery(event.target.value)} placeholder="Times seen (e.g. 2)" />
-          </label>
           <label className="search-field"><SlidersHorizontal size={17} aria-hidden="true" /><span className="sr-only">Sort bands</span>
             <select value={sort} onChange={(event) => setSort(event.target.value)}><option value="name">Sort: A–Z</option><option value="count">Most seen</option></select>
+          </label>
+          <label className="search-field"><Search size={17} aria-hidden="true" /><span className="sr-only">Search band names</span>
+            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search bands..." />
+          </label>
+
+          <label className="search-field count-filter-field"><span className="sr-only">Filter by exact number of times seen</span>
+            <input type="number" min="1" step="1" inputMode="numeric" value={countQuery} onChange={(event) => setCountQuery(event.target.value)} placeholder="Times seen (e.g. 2)" />
           </label>
         </div>
         <p className="results-count">SHOWING {filtered.length} OF {bands.length} BANDS</p>
