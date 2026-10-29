@@ -40,7 +40,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 ::selection { background: var(--red); color: white; }
 .site-shell { overflow: clip; min-height: 100vh; }
 .page-wrap { width: min(var(--page-width), calc(100% - 64px)); margin-inline: auto; }
-.section-pad { padding-block: clamp(76px, 9vw, 132px); }
+.section-pad { padding-block: clamp(50px, 5vw, 132px); }
 .eyebrow {
   margin: 0;
   color: var(--muted);
@@ -82,6 +82,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .nav-cta:hover { background: rgba(255,255,255,.08); border-color: white; }
 .mobile-menu-button { display: none; color: white; background: transparent; border: 0; padding: 6px; }
 
+/* Direct, responsive shortcuts to the four primary archive collections. */
+.home-archive-nav { position: relative; z-index: 1; margin-top: -1px; padding-top: 18px; padding-bottom: 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.home-archive-nav-label { display: block; margin-bottom: 12px; color: var(--muted); font: 9px var(--font-mono); letter-spacing: .14em; }
+.home-archive-nav-links { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.home-archive-nav-links a { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding: 12px 13px; border: 1px solid var(--line); color: #e4e1e2; font-size: 11px; transition: border-color .2s, background .2s; }
+.home-archive-nav-links a:hover, .home-archive-nav-links a:focus-visible { border-color: var(--red); background: rgba(224, 36, 48, .08); outline-offset: 3px; }
+.home-archive-nav-links svg { flex-shrink: 0; color: var(--red); }
+
 /* --------------------------------------------------------------------------
    BUTTONS AND LINKS
    -------------------------------------------------------------------------- */
@@ -116,8 +124,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   position: absolute; z-index: -3; inset: 0;
   background:
     linear-gradient(90deg, rgba(8,8,9,.94) 0%, rgba(8,8,9,.76) 37%, rgba(8,8,9,.28) 72%, rgba(8,8,9,.36) 100%),
-    linear-gradient(0deg, rgba(8,8,9,.78) 0%, rgba(8,8,9,.06) 30%, rgba(8,8,9,.28) 100%),
-    url('/images/festival-banner.jpg') center 40% / cover no-repeat;
+    linear-gradient(0deg, rgba(8,8,9,.78) 0%, rgba(8,8,9,.06) 48%, rgba(8,8,9,.28) 100%),
+    url('/images/festival-banner.jpg') center 48% / cover no-repeat;
   transform: scale(1.02);
 }
 .hero-grain {
@@ -168,6 +176,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   transition: border-color .25s, transform .25s;
 }
 .collection-card:nth-child(1), .collection-card:nth-child(2) { grid-column: span 6; min-height: 340px; }
+/* The homepage uses four equal primary collection tiles. */
+.collections-section .collection-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.collections-section .collection-card, .collections-section .collection-card:nth-child(1), .collections-section .collection-card:nth-child(2) { grid-column: auto; min-height: 330px; }
 .collection-card:hover { border-color: rgba(255,255,255,.35); transform: translateY(-3px); }
 .collection-card-image {
   position: absolute; z-index: -2; inset: 0; background-position: center; background-size: cover;
@@ -191,7 +202,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .collection-green .collection-card-image { filter: hue-rotate(95deg); }
 .collection-blue .collection-card-image { filter: hue-rotate(170deg); }
 .collection-orange .collection-card-image { filter: hue-rotate(-20deg); }
-.collection-pink .collection-card-image { filter: hue-rotate(300deg); }
+/* .collection-pink .collection-card-image { filter: hue-rotate(300deg); } */
 
 /* --------------------------------------------------------------------------
    FEATURED ITEMS AND ITEM CARDS
@@ -417,6 +428,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .section-action { padding-bottom: 0; }
   .collection-grid { gap: 10px; }
   .collection-card, .collection-card:nth-child(1), .collection-card:nth-child(2) { grid-column: span 12; min-height: 270px; }
+  .collections-section .collection-grid { grid-template-columns: 1fr; }
+  .home-archive-nav { padding-top: 16px; padding-bottom: 16px; }
+  .home-archive-nav-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .home-archive-nav-links a { min-height: 48px; padding: 10px; font-size: 10px; }
+  .collections-section .collection-card, .collections-section .collection-card:nth-child(1), .collections-section .collection-card:nth-child(2) { min-height: 270px; }
   .collection-card h3 { font-size: 27px; }
   .archive-item-grid { grid-template-columns: 1fr; gap: 26px; }
   .archive-item-image { aspect-ratio: 1.2 / 1; }
@@ -453,4 +469,133 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+
+/* --------------------------------------------------------------------------
+   BANDS SEEN LIVE INDEX
+   -------------------------------------------------------------------------- */
+.seen-live-controls { display: grid; grid-template-columns: 1.4fr 1.2fr .65fr; gap: 12px; }
+.seen-live-table-wrap { margin-top: 22px; border: 1px solid var(--line); background: var(--surface); overflow-x: auto; }
+.seen-live-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12px; }
+.seen-live-table th, .seen-live-table td { padding: 17px 20px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.seen-live-table thead th { color: var(--muted); font: 10px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; background: rgba(255,255,255,.025); }
+.seen-live-table tbody th { font-weight: 700; }
+.seen-live-table tbody td { color: #c2bfc0; }
+.seen-live-table tbody tr:last-child th, .seen-live-table tbody tr:last-child td { border-bottom: 0; }
+.seen-count { display: inline-grid; min-width: 30px; min-height: 30px; place-items: center; border: 1px solid rgba(240,68,75,.35); color: var(--red); font-family: var(--font-mono); }
+.seen-live-empty { border: 0; }
+.seen-live-import-note { margin: 18px 0 0; color: var(--subtle); font-size: 11px; line-height: 1.8; }
+@media (max-width: 900px) {
+  .site-header { gap: 18px; }
+  .desktop-nav { gap: 14px; }
+  .desktop-nav > a:not(.nav-cta) { font-size: 10px; }
+  .brand-word { letter-spacing: .1em; }
+}
+@media (max-width: 760px) {
+  .desktop-nav { display: none; }
+  .mobile-menu-button { display: block; }
+  .desktop-nav.is-open { display: flex; }
+  .seen-live-controls { grid-template-columns: 1fr; }
+  .seen-live-table { min-width: 620px; }
+}
+
+
+/* Live index: searchable table styling */
+.seen-live-controls { display: grid; grid-template-columns: minmax(220px, 1.4fr) minmax(180px, 1fr) minmax(150px, .7fr) minmax(150px, .8fr); gap: 12px; margin: 28px 0 16px; }
+.seen-live-controls .search-field { display:flex; align-items:center; gap:10px; min-width:0; border:1px solid var(--line, #343434); background:#111; padding:0 13px; min-height:48px; color:#aaa; }
+.seen-live-controls input, .seen-live-controls select { width:100%; min-width:0; border:0; outline:0; background:transparent; color:#eee; padding:12px 0; font:inherit; }
+.seen-live-controls select option { background:#111; color:#eee; }
+.results-count { color:#999; font-size:.72rem; letter-spacing:.12em; margin:22px 0 10px; }
+.seen-live-table-wrap { overflow-x:auto; border:1px solid #292929; background:#0c0c0c; }
+.seen-live-table { width:100%; border-collapse:collapse; min-width:680px; }
+.seen-live-table th { text-align:left; padding:15px 18px; background:#171717; color:#aaa; text-transform:uppercase; letter-spacing:.1em; font-size:.7rem; font-weight:600; }
+.seen-live-table td { padding:16px 18px; border-top:1px solid #242424; vertical-align:top; color:#c9c9c9; font-size:.9rem; }
+.seen-live-table tbody tr:hover { background:#141111; }
+.seen-live-table .band-name-cell { color:#f4f0e8; font-weight:700; min-width:180px; }
+.sighting-count { display:inline-block; border:1px solid #612020; color:#f1b5b5; background:#210f10; padding:4px 9px; white-space:nowrap; font-size:.78rem; }
+.festival-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.festival-tag { display:inline-block; border:1px solid #343434; padding:4px 8px; color:#aaa; font-size:.75rem; }
+.empty-state { padding:32px; text-align:center; color:#aaa; }
+@media (max-width: 760px) { .seen-live-controls { grid-template-columns:1fr; } .seen-live-table th, .seen-live-table td { padding:13px 12px; } }
+
+.cup-import-notice { display:flex; flex-direction:column; align-items:center; gap:12px; margin:28px 0 64px; padding:clamp(24px,5vw,56px); border:1px solid #303030; background:linear-gradient(145deg,#121212,#0b0b0b); color:#aaa; }
+.cup-import-notice h3 { color:#f1ede5; font-size:1.25rem; margin:0; }
+.cup-import-notice p { max-width:680px; margin:0; line-height:1.7; }
+.cup-import-notice code { color:#e7aaaa; }
+.cup-import-secondary { font-size:.85rem; }
+
+/* --------------------------------------------------------------------------
+   FESTIVAL CUPS GALLERY
+   -------------------------------------------------------------------------- */
+.cups-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(210px, 280px); gap: 12px; margin-top: 25px; }
+.cups-search, .cups-filter-label { min-height: 48px; display: flex; align-items: center; gap: 11px; padding: 0 14px; border: 1px solid var(--line); background: #101012; color: var(--muted); font-size: 11px; }
+.cups-search input { width: 100%; min-width: 0; color: var(--text); background: transparent; border: 0; outline: 0; font-size: 12px; }
+.cups-search input::placeholder { color: #777479; }
+.cups-filter-label { justify-content: space-between; gap: 14px; }
+.cups-filter-label select { flex: 1; min-width: 0; color: var(--text); background: #101012; border: 0; outline: 0; font-size: 11px; }
+.cups-filter-label option { color: white; background: #111; }
+.cups-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 18px; padding-bottom: 64px; }
+.cup-card { min-width: 0; border: 1px solid var(--line); background: #101012; }
+.cup-image-link { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #181719; }
+.cup-image { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.cup-image-link:hover .cup-image { transform: scale(1.035); }
+.cup-image-open { position: absolute; right: 11px; bottom: 11px; display: grid; place-items: center; width: 32px; height: 32px; color: #fff; background: rgba(0,0,0,.7); border: 1px solid rgba(255,255,255,.3); }
+.cup-number { position: absolute; top: 11px; left: 11px; padding: 6px 8px; color: #fff; background: rgba(0,0,0,.72); border: 1px solid rgba(255,255,255,.2); font: 10px var(--font-mono); }
+.cup-card-copy { padding: 15px 16px 17px; }
+.cup-card-copy .eyebrow { margin: 0; color: var(--red); font-size: 9px; }
+.cup-card-copy h3 { margin: 7px 0 5px; font-size: 18px; letter-spacing: -.035em; }
+.cup-card-copy > p:last-child { overflow-wrap: anywhere; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.cups-feedback { margin: 20px 0 64px; padding: 35px 20px; gap: 12px; }
+.cups-feedback > svg { color: var(--red); }
+.cups-feedback p { max-width: 620px; padding-inline: 14px; color: var(--muted); line-height: 1.7; }
+.cups-feedback code { color: #e7aaaa; }
+@media (max-width: 900px) { .cups-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .cups-controls { grid-template-columns: 1fr; } .cups-gallery { grid-template-columns: 1fr; gap: 18px; } .cup-image-link { aspect-ratio: 5 / 4; } }
+
+
+/* Mobile-first card presentation for the Bands Seen Live catalogue. */
+@media (max-width: 600px) {
+  .seen-live-page .archive-content-section { min-width: 0; }
+  .seen-live-page .seen-live-table-wrap { overflow: visible; border: 0; background: transparent; }
+  .seen-live-page .seen-live-table { width: 100%; min-width: 0; display: block; border-collapse: separate; }
+  .seen-live-page .seen-live-table thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .seen-live-page .seen-live-table tbody { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .seen-live-page .seen-live-table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 12px; min-width: 0; padding: 14px; border: 1px solid var(--line); background: var(--surface); }
+  .seen-live-page .seen-live-table td { display: block; min-width: 0; padding: 8px 0; border: 0; overflow-wrap: anywhere; }
+  .seen-live-page .seen-live-table td::before { content: attr(data-label); display: block; margin-bottom: 6px; color: var(--muted); font: 9px/1.5 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+  .seen-live-page .seen-live-table .band-name-cell { grid-column: 1 / -1; min-width: 0; padding-top: 0; color: var(--text); font-size: 1rem; }
+  .seen-live-page .seen-live-table td[data-label="Times seen"] { align-self: start; }
+  .seen-live-page .seen-live-table td[data-label="Festival / venue appearances"] { grid-column: 1 / -1; }
+  .seen-live-page .festival-tags { gap: 5px; }
+  .seen-live-page .festival-tag { max-width: 100%; white-space: normal; overflow-wrap: anywhere; line-height: 1.4; }
+  .seen-live-page .seen-live-controls { grid-template-columns: minmax(0, 1fr); }
+  .seen-live-page .section-heading { gap: 14px; }
+  .seen-live-page .results-count { line-height: 1.6; }
+}
+
+
+/* Explicit mobile cards for Bands Seen Live; avoids table min-width overflow. */
+.seen-live-mobile-list { display: none; }
+@media (max-width: 760px) {
+  .seen-live-page,
+  .seen-live-page .archive-content-section,
+  .seen-live-page .archive-controls,
+  .seen-live-page .section-heading { min-width: 0; width: 100%; max-width: 100%; }
+  .seen-live-page .seen-live-controls { grid-template-columns: minmax(0, 1fr); width: 100%; }
+  .seen-live-page .seen-live-controls .search-field { width: 100%; min-width: 0; box-sizing: border-box; }
+  .seen-live-page .seen-live-table-wrap { display: none; }
+  .seen-live-page .seen-live-mobile-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin: 18px 0 48px; width: 100%; min-width: 0; }
+  .seen-live-page .seen-live-mobile-card { display: block; min-width: 0; width: 100%; box-sizing: border-box; padding: 15px; border: 1px solid var(--line, #303030); background: var(--surface, #101010); overflow: hidden; }
+  .seen-live-page .seen-live-mobile-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; min-width: 0; }
+  .seen-live-page .seen-live-mobile-card h3 { min-width: 0; margin: 0; color: var(--text, #f4f0e8); font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; }
+  .seen-live-page .seen-live-mobile-card .sighting-count { flex: 0 0 auto; max-width: 100%; }
+  .seen-live-page .seen-live-mobile-label { margin: 15px 0 8px; color: var(--muted, #999); font: 9px/1.5 var(--font-mono, monospace); letter-spacing: .08em; text-transform: uppercase; }
+  .seen-live-page .seen-live-mobile-card .festival-tags { min-width: 0; }
+  .seen-live-page .seen-live-mobile-card .festival-tag { max-width: 100%; white-space: normal; overflow-wrap: anywhere; box-sizing: border-box; }
+  .seen-live-page .seen-live-no-results { margin: 18px 0 48px; padding: 24px 14px; overflow-wrap: anywhere; }
+}
+@media (max-width: 360px) {
+  .seen-live-page .seen-live-mobile-card { padding: 12px; }
+  .seen-live-page .seen-live-mobile-card-top { flex-direction: column; align-items: flex-start; }
 }
