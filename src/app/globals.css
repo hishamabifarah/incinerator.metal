@@ -212,7 +212,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .archive-item-card { min-width: 0; display: block; }
 .archive-item-image {
   position: relative; aspect-ratio: 1.22 / 1; overflow: hidden; background-color: var(--surface-raised);
-  background-size: cover; background-position: center; border: 1px solid var(--line);
+  background-size: cover; background-position: center;
   transition: border-color .2s;
 }
 .archive-item-card:hover .archive-item-image { border-color: var(--line-strong); }
@@ -324,7 +324,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
    -------------------------------------------------------------------------- */
 .detail-page { padding-top: 125px; padding-bottom: 110px; }
 .detail-layout { display: grid; grid-template-columns: 1fr .9fr; gap: clamp(35px, 7vw, 90px); margin-top: 30px; align-items: start; }
-.detail-art { position: relative; min-height: 520px; background-size: cover; background-position: center; border: 1px solid var(--line); }
+.detail-art { position: relative; min-height: 520px; background-size: cover; background-position: center; }
 .detail-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.65)); }
 .detail-art-label, .detail-art-index { position: absolute; z-index: 1; bottom: 20px; font: 9px var(--font-mono); letter-spacing: .1em; }
 .detail-art-label { left: 20px; color: rgba(255,255,255,.7); }
