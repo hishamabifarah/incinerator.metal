@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, MapPin, CalendarDays, Tag } from "lucide-react";
-import { archiveItems, collections, getArchiveItem, getCollection } from "../../../../data/archive";
+import { archiveItems, collections, getArchiveItem, getCollection } from "../../../..//data/archive";
+import bandsSeenLive from "../../../../data/bands-seen-live.json";
 
 // Generate one detail page for every sample archive item.
 export function generateStaticParams() {
@@ -22,7 +23,42 @@ export default async function ArchiveDetailPage({ params }: { params: Promise<{ 
 
   if (!item || !collection) notFound();
 
-  const related = archiveItems.filter((entry: NonNullable<ReturnType<typeof getArchiveItem>>) => entry.collectionSlug === slug && entry.id !== id).slice(0, 3);
+  const related = archiveItems.filter((entry) => entry.collectionSlug === slug && entry.id !== id).slice(0, 3);
+
+// Match each festival archive URL slug against every festival value in
+// bands-seen-live.json. Supports custom aliases for festival name differences.
+  const toFestivalSlug = (value: string) =>
+    value
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+
+  const festivalAliases: Record<string, string> = {
+    "motocultor-2023": "Motocultor Festival 2023",
+    "knotfest-2019": "Knotfest Meets Hellfest 2019",
+    "tolminator-2026": "Tolminator Metal Fest 2026",
+  };
+
+  const currentFestivalSlug = toFestivalSlug(id);
+
+  const expectedFestivalSlug = festivalAliases[id]
+    ? toFestivalSlug(festivalAliases[id])
+    : currentFestivalSlug;
+
+  const bandsSeenAtFestival =
+    slug === "festivals"
+      ? bandsSeenLive
+          .filter((band) =>
+            band.festival.some(
+              (festival) => toFestivalSlug(festival) === expectedFestivalSlug
+            )
+          )
+          .map((band) => band.name)
+          .sort((a, b) => a.localeCompare(b))
+      : [];
 
   return (
     <div className="page-wrap detail-page">
@@ -49,10 +85,34 @@ export default async function ArchiveDetailPage({ params }: { params: Promise<{ 
             {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
           </div>
 
-          <div className="detail-note">
+          {/* <div className="detail-note">
             <p className="eyebrow">ARCHIVE NOTE</p>
-            <p>This is sample content to show the detail-page layout. Replace the description, location, tags, year, and image path in <code>src/data/archive.ts</code> with your own story.</p>
-          </div>
+            <p>{item.description}</p>
+            {slug === "festivals" ? (
+              <div className="festival-bands-note">
+                <p className="eyebrow">BANDS SEEN LIVE</p>
+                {bandsSeenAtFestival.length > 0 ? (
+                  <p>{bandsSeenAtFestival.join(", ")}</p>
+                ) : (
+                  <p>No bands from this festival edition have been added to the Seen Live archive yet.</p>
+                )}
+              </div>
+            ) : null}
+          </div> */}
+          <div className="archive-bands">
+  <div className="archive-bands-heading">
+    <span>BANDS SEEN LIVE</span>
+    <span>{bandsSeenAtFestival.length} BANDS</span>
+  </div>
+
+  <div className="archive-bands-grid">
+    {bandsSeenAtFestival.map((band) => (
+      <span key={band} className="archive-band">
+        {band}
+      </span>
+    ))}
+  </div>
+</div>
 
           <Link className="button button-secondary" href={`/archive/${slug}`}>Return to collection <ArrowUpRight size={16} /></Link>
         </article>

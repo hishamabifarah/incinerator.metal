@@ -608,3 +608,73 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .seen-live-page .seen-live-mobile-card { padding: 12px; }
   .seen-live-page .seen-live-mobile-card-top { flex-direction: column; align-items: flex-start; }
 }
+
+/* Festival detail: bands seen live within the archive note */
+/* .festival-bands-note {
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.festival-bands-note > p:last-child {
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+} */
+.archive-bands {
+  padding: 24px;
+  background: #111113;
+  border-left: 3px solid var(--accent, #e33b45);
+  margin-bottom: 12px;
+}
+
+.archive-bands-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: #aaa;
+}
+
+.archive-bands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.archive-band {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 7px 9px;
+  background: #1b1b1f;
+  border: 1px solid #303035;
+  border-radius: 3px;
+  color: #c5c5ca;
+  font-size: 11px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.archive-band:hover {
+  border-color: #e33b45;
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .archive-bands {
+    padding: 18px;
+  }
+
+  .archive-bands-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .archive-bands-grid {
+    grid-template-columns: 1fr;
+  }
+}
