@@ -675,6 +675,68 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 @media (max-width: 420px) {
   .archive-bands-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
+}
+/* --------------------------------------------------------------------------
+   FESTIVAL / CONCERT PHOTO GALLERY
+   -------------------------------------------------------------------------- */
+.archive-gallery-section {
+  margin-top: 105px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.archive-gallery-heading { align-items: end; margin-bottom: 28px; }
+.archive-gallery-heading h2 { margin: 10px 0 0; font-size: clamp(34px, 4vw, 52px); letter-spacing: -.065em; }
+.archive-gallery-heading h2 span { color: var(--red); }
+.archive-gallery-intro { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.archive-gallery-count { flex: 0 0 auto; color: var(--muted); font: 10px var(--font-mono); letter-spacing: .12em; }
+.archive-gallery-mobile { display: none; }
+.archive-gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 14px; }
+.archive-gallery-card { display: block; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.archive-gallery-image-wrap { position: relative; display: block; overflow: hidden; aspect-ratio: 4 / 3; background: #171719; border: 1px solid var(--line); }
+.archive-gallery-image { object-fit: cover; transition: transform .45s ease, opacity .3s ease; }
+.archive-gallery-card:hover .archive-gallery-image { transform: scale(1.045); opacity: .86; }
+.archive-gallery-image-index { position: absolute; z-index: 1; left: 10px; bottom: 10px; padding: 5px 7px; color: #fff; background: rgba(0,0,0,.72); font: 9px var(--font-mono); letter-spacing: .08em; }
+.archive-gallery-caption { display: block; padding-top: 10px; color: #d0cdd0; font-size: 11px; line-height: 1.55; }
+.archive-gallery-card:hover .archive-gallery-caption { color: #fff; }
+.archive-gallery-pagination { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 32px; padding-top: 17px; border-top: 1px solid var(--line); }
+.archive-gallery-pagination button { display: inline-flex; align-items: center; gap: 7px; padding: 8px 0; border: 0; background: transparent; color: var(--text); font: 10px var(--font-mono); cursor: pointer; }
+.archive-gallery-pagination button:disabled { color: var(--subtle); cursor: not-allowed; }
+.archive-gallery-pagination > span { color: var(--muted); font: 9px var(--font-mono); letter-spacing: .1em; }
+.archive-lightbox { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 30px; background: rgba(0,0,0,.94); }
+.archive-lightbox-dialog { position: relative; display: grid; grid-template-columns: 48px minmax(0, 1fr) 48px; grid-template-rows: minmax(0, 1fr) auto; align-items: center; width: min(1100px, 100%); height: min(820px, 88vh); }
+.archive-lightbox-image-wrap { position: relative; grid-column: 2; grid-row: 1; width: 100%; height: 100%; min-height: 0; }
+.archive-lightbox-image { object-fit: contain; }
+.archive-lightbox-close { position: absolute; z-index: 3; top: -35px; right: 0; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.25); background: #151515; color: #fff; cursor: pointer; }
+.archive-lightbox-arrow { z-index: 2; display: grid; place-items: center; width: 38px; height: 48px; border: 1px solid rgba(255,255,255,.2); background: rgba(20,20,20,.85); color: #fff; cursor: pointer; }
+.archive-lightbox-prev { grid-column: 1; grid-row: 1; }
+.archive-lightbox-next { grid-column: 3; grid-row: 1; }
+.archive-lightbox-caption { grid-column: 2; grid-row: 2; display: flex; justify-content: space-between; gap: 20px; padding-top: 16px; color: #e8e5e5; font-size: 12px; }
+.archive-lightbox-caption small { color: var(--muted); font: 9px var(--font-mono); white-space: nowrap; }
+@media (max-width: 1000px) {
+  .archive-gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .archive-gallery-grid, .archive-gallery-pagination { display: none; }
+  .archive-gallery-mobile { display: block; }
+  .archive-gallery-mobile-image-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--line); background: #171719; }
+  .archive-gallery-mobile-arrows { position: absolute; z-index: 2; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; pointer-events: none; }
+  .archive-gallery-mobile-arrows button { display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; background: rgba(0,0,0,.68); color: #fff; cursor: pointer; pointer-events: auto; backdrop-filter: blur(6px); transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+  .archive-gallery-mobile-arrows button:active { transform: scale(.94); }
+  .archive-gallery-mobile-arrows button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .archive-gallery-mobile-caption-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; min-height: 42px; }
+  .archive-gallery-mobile-count { flex: 0 0 auto; padding-top: 10px; color: var(--muted); font: 9px var(--font-mono); white-space: nowrap; }
+    .archive-gallery-section { margin-top: 75px; padding-top: 35px; }
+  .archive-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 10px; }
+  .archive-gallery-heading { gap: 12px; }
+  .archive-gallery-count { padding-top: 8px; }
+  .archive-lightbox { padding: 18px 10px; }
+  .archive-lightbox-dialog { grid-template-columns: 34px minmax(0, 1fr) 34px; height: 78vh; }
+  .archive-lightbox-arrow { width: 30px; height: 42px; }
+}
+@media (max-width: 420px) {
+  .archive-gallery-grid { grid-template-columns: 1fr; }
+  .archive-gallery-image-wrap { aspect-ratio: 5 / 4; }
+  .archive-gallery-heading { align-items: flex-start; flex-direction: column; }
 }

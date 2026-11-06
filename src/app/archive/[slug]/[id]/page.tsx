@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, MapPin, CalendarDays, Tag } from "lucide-react";
 import { archiveItems, collections, getArchiveItem, getCollection } from "../../../..//data/archive";
 import bandsSeenLive from "../../../../data/bands-seen-live.json";
+import ArchiveGallery from "../../../../components/archive/ArchiveGallery";
 
 // Generate one detail page for every sample archive item.
 export function generateStaticParams() {
@@ -100,23 +101,27 @@ export default async function ArchiveDetailPage({ params }: { params: Promise<{ 
             ) : null}
           </div> */}
           <div className="archive-bands">
-  <div className="archive-bands-heading">
-    <span>BANDS SEEN LIVE</span>
-    <span>{bandsSeenAtFestival.length} BANDS</span>
-  </div>
+            <div className="archive-bands-heading">
+              <span>BANDS SEEN LIVE</span>
+              <span>{bandsSeenAtFestival.length} BANDS</span>
+            </div>
 
-  <div className="archive-bands-grid">
-    {bandsSeenAtFestival.map((band) => (
-      <span key={band} className="archive-band">
-        {band}
-      </span>
-    ))}
-  </div>
-</div>
+            <div className="archive-bands-grid">
+              {bandsSeenAtFestival.map((band) => (
+                <span key={band} className="archive-band">
+                  {band}
+                </span>
+              ))}
+            </div>
+          </div>
 
           <Link className="button button-secondary" href={`/archive/${slug}`}>Return to collection <ArrowUpRight size={16} /></Link>
         </article>
       </section>
+
+      {((slug === "festivals" || slug === "concerts") && item.images?.length) ? (
+        <ArchiveGallery images={item.images} title={item.title} />
+      ) : null}
 
       {related.length > 0 ? (
         <section className="related-section">

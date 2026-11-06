@@ -10,6 +10,13 @@ export type Collection = {
   image: string;
 };
 
+export type ArchiveImage = {
+  src: string;
+  alt: string;
+  /** Band name for performance photos; descriptive caption for atmosphere/location photos. */
+  caption: string;
+};
+
 export type ArchiveItem = {
   id: string;
   collectionSlug: string;
@@ -19,6 +26,8 @@ export type ArchiveItem = {
   location: string;
   description: string;
   image: string;
+  /** Optional photo gallery for festival and concert entries. */
+  images?: ArchiveImage[];
   tags: string[];
   featured?: boolean;
 };
@@ -41,6 +50,15 @@ export const collections: Collection[] = [
     countLabel: "Festival editions",
     accent: "orange",
     image: "/images/hero-stage.jpg",
+  },
+  {
+    slug: "concerts",
+    title: "Concerts & Tours",
+    eyebrow: "EVERY SHOW HAS A STORY",
+    description: "Individual gigs, tour dates, and unforgettable nights. A personal archive of the bands, venues, cities, and live experiences along the way.",
+    countLabel: "Concert memories",
+    accent: "orange",
+    image: "/images/concerts-main.jpg",
   },
   {
     slug: "vinyl",
@@ -69,6 +87,15 @@ export const collections: Collection[] = [
   //   accent: "green",
   //   image: "/images/wristbands.svg",
   // },
+    {
+    slug: "meet-and-greets",
+    title: "Meet & greets",
+    eyebrow: "BACKSTAGE STORIES",
+    description: "Brief conversations and unforgettable moments with the people behind the music.",
+    countLabel: "Encounters",
+    accent: "pink",
+    image: "/images/meet-greet-kreator.jpg",
+  },
   {
     slug: "cups",
     title: "Festival cups",
@@ -79,33 +106,120 @@ export const collections: Collection[] = [
     image: "/images/cups-main.jpg",
   },
   {
-    slug: "meet-and-greets",
-    title: "Meet & greets",
-    eyebrow: "BACKSTAGE STORIES",
-    description: "Brief conversations and unforgettable moments with the people behind the music.",
-    countLabel: "Encounters",
-    accent: "pink",
-    image: "/images/meet-greet-kreator.jpg",
+    slug: "shirts",
+    title: "Shirts & Hoodies",
+    eyebrow: "WORN WITH PRIDE",
+    description: "Tour merch, festival shirts, and hoodies collected over the years. Every piece carries a memory of the music, the bands, and the moments behind it.",
+    countLabel: "Pieces",
+    accent: "blue",
+    image: "/images/shirts-main.jpg",
   },
+
 ];
 
 // Example entries are deliberately labeled as sample data. Replace them with
 // your own memories and image paths when you begin cataloguing your collection.
 
 // description: "A festival entry ready for your photos, lineup notes, and personal memories. Replace this sample with your own record.",
-
+//
 export const archiveItems: ArchiveItem[] = [
-  {
-    id: "hellfest-2014",
-    collectionSlug: "festivals",
-    title: "Hellfest 2014",
-    subtitle: "Festival edition",
-    year: "2014",
-    location: "Clisson, France",
-    description:"",
-    image: "/images/festivals/hellfest2014.jpg",
-    tags: ["Festival", "France", "Live music"],
-    featured: true,
+{
+  "id": "hellfest-2014",
+  "collectionSlug": "festivals",
+  "title": "Hellfest 2014",
+  "subtitle": "Festival edition",
+  "year": "2014",
+  "location": "Clisson, France",
+  "description": "",
+  "image": "/images/festivals/hellfest2014.jpg",
+  "images": [
+    {
+      "src": "/images/festivals/hellfest-2014/01.jpg",
+      "alt": "Festival atmosphere at Hellfest 2014 in Clisson, France",
+      "caption": "Hellfest 2014 — festival atmosphere"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/02.jpg",
+      "alt": "A view from the Hellfest 2014 festival grounds",
+      "caption": "Around the festival grounds"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/03.jpg",
+      "alt": "A scene from the Hellfest 2014 festival",
+      "caption": "A moment at Hellfest"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/04.jpg",
+      "alt": "Festival surroundings at Hellfest 2014",
+      "caption": "The Hellfest surroundings"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/05.jpg",
+      "alt": "The atmosphere at Hellfest 2014",
+      "caption": "The festival experience"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/06.jpg",
+      "alt": "Another view of the Hellfest 2014 festival site",
+      "caption": "Clisson, France — Hellfest 2014"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/annihilator.jpg",
+      "alt": "Annihilator performing live at Hellfest 2014",
+      "caption": "Annihilator"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/behemoth.jpg",
+      "alt": "Behemoth performing live at Hellfest 2014",
+      "caption": "Behemoth"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/blacksabbath.jpg",
+      "alt": "Black Sabbath performing live at Hellfest 2014",
+      "caption": "Black Sabbath"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/emperor.jpg",
+      "alt": "Emperor performing live at Hellfest 2014",
+      "caption": "Emperor"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/gorgoroth.jpg",
+      "alt": "Gorgoroth performing live at Hellfest 2014",
+      "caption": "Gorgoroth"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/incantation.jpg",
+      "alt": "Incantation performing live at Hellfest 2014",
+      "caption": "Incantation"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/ironmaiden.jpg",
+      "alt": "Iron Maiden performing live at Hellfest 2014",
+      "caption": "Iron Maiden"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/sepultura.jpg",
+      "alt": "Sepultura performing live at Hellfest 2014",
+      "caption": "Sepultura"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/slayer.jpg",
+      "alt": "Slayer performing live at Hellfest 2014",
+      "caption": "Slayer"
+    },
+    {
+      "src": "/images/festivals/hellfest-2014/d666.jpg",
+      "alt": "Deströyer 666 performing live at Hellfest 2014",
+      "caption": "Deströyer 666"
+    }
+  ],
+  "tags": [
+    "Festival",
+    "France",
+    "Live music"
+  ],
+  "featured": true
   },
   {
     id: "hellfest-2015",
@@ -160,7 +274,7 @@ export const archiveItems: ArchiveItem[] = [
     title: "Knotfest 2019",
     subtitle: "Festival edition",
     year: "2019",
-    location: "Clisson, France",
+    location: "Nantes, France",
     description:"",
     image: "/images/festivals/knotfest2019.jpg",
     tags: ["Festival", "France", "Live music"],
@@ -224,7 +338,7 @@ export const archiveItems: ArchiveItem[] = [
     description:"",
     image: "/images/festivals/brutalassault2024.jpg",
     tags: ["Festival", "Czech Republic", "Live music"],
-    featured: true,
+    featured: false,
   },
   {
     id: "brutal-assault-2025",
