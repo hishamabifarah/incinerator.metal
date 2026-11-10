@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "../../../lib/db";
 
-export const runtime = "nodejs";
+// export const runtime = "nodejs";
 
 export async function POST(request: NextRequest) {
   try {
