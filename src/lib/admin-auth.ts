@@ -1,5 +1,6 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
+import { connection } from "next/server";
 
 export const ADMIN_COOKIE = "incin_admin_session";
 const SESSION_SECONDS = 60 * 60 * 24 * 7;
@@ -25,7 +26,10 @@ export async function verifyAdminSession(token?: string | null) {
   if (!token) return false;
   const [expires, suppliedSignature, extra] = token.split(".");
   if (!expires || !suppliedSignature || extra) return false;
-  if (!/^\d+$/.test(expires) || Number(expires) <= Math.floor(Date.now() / 1000)) return false;
+  if (!/^\d+$/.test(expires)) return false;
+  // Date.now() is unstable, so force request-time rendering before reading it.
+  await connection();
+  if (Number(expires) <= Math.floor(Date.now() / 1000)) return false;
   const expected = Buffer.from(signature(expires), "hex");
   const supplied = Buffer.from(suppliedSignature, "hex");
   return expected.length === supplied.length && timingSafeEqual(expected, supplied);
