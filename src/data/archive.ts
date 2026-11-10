@@ -232,6 +232,103 @@ export const archiveItems: ArchiveItem[] = [
     image: "/images/festivals/hellfest2015.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
+    images: [
+      {
+        "src": "/images/festivals/hellfest-2015/01.jpg",
+        "alt": "A view of the Hellfest 2015 festival grounds in Clisson, France",
+        "caption": "Hellfest 2015 — festival grounds"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/02.jpg",
+        "alt": "A scene capturing the atmosphere of Hellfest 2015",
+        "caption": "The Hellfest atmosphere"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/03.jpg",
+        "alt": "A moment from the Hellfest 2015 festival",
+        "caption": "A moment at Hellfest"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/04.jpg",
+        "alt": "Festival scenery at Hellfest 2015 in Clisson",
+        "caption": "Clisson, France — Hellfest 2015"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/alestorm.jpg",
+        "alt": "Alestorm performing live at Hellfest 2015",
+        "caption": "Alestorm"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/bloodbath.jpg",
+        "alt": "Bloodbath performing live at Hellfest 2015",
+        "caption": "Bloodbath"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/bolzer.jpg",
+        "alt": "Bölzer performing live at Hellfest 2015",
+        "caption": "Bölzer"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/cannibalcorpse.jpg",
+        "alt": "Cannibal Corpse performing live at Hellfest 2015",
+        "caption": "Cannibal Corpse"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/carachangren.jpg",
+        "alt": "Carach Angren performing live at Hellfest 2015",
+        "caption": "Carach Angren"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/childrenofbodom.jpg",
+        "alt": "Children of Bodom performing live at Hellfest 2015",
+        "caption": "Children of Bodom"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/derwegeinerfreiheit.jpg",
+        "alt": "Der Weg Einer Freiheit performing live at Hellfest 2015",
+        "caption": "Der Weg Einer Freiheit"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/ensiferum.jpg",
+        "alt": "Ensiferum performing live at Hellfest 2015",
+        "caption": "Ensiferum"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/judaspriest.jpg",
+        "alt": "Judas Priest performing live at Hellfest 2015",
+        "caption": "Judas Priest"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/mayhem.jpg",
+        "alt": "Mayhem performing live at Hellfest 2015",
+        "caption": "Mayhem"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/melechesh.jpg",
+        "alt": "Melechesh performing live at Hellfest 2015",
+        "caption": "Melechesh"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/motorhead.jpg",
+        "alt": "Motörhead performing live at Hellfest 2015",
+        "caption": "Motörhead"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/necrowretch.jpg",
+        "alt": "Necrowretch performing live at Hellfest 2015",
+        "caption": "Necrowretch"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/obituary.jpg",
+        "alt": "Obituary performing live at Hellfest 2015",
+        "caption": "Obituary"
+      },
+      {
+        "src": "/images/festivals/hellfest-2015/prostitutedisfigurement.jpg",
+        "alt": "Prostitute Disfigurement performing live at Hellfest 2015",
+        "caption": "Prostitute Disfigurement"
+      }
+    ]
   },
   {
     id: "headbangers-weekend-2015",
@@ -377,7 +474,7 @@ export const archiveItems: ArchiveItem[] = [
     featured: false,
   },
   {
-    id: "turntable-session-01",
+    id: "echoes-of-battle-vinyl",
     collectionSlug: "vinyl",
     title: "Caladan Brood",
     subtitle: "Echoes of Battle",

@@ -1,51 +1,12 @@
-import { NextResponse } from "next/server"
+import { NextResponse } from "next/server";
+import { archiveItems, collections } from "../../../data/archive";
+import { getSiteUrl } from "../../../lib/site-url";
 
 export async function GET() {
-  const baseUrl = "https://hishamabifarah.com/"
-
-  // Ensure XML-safe encoding for all dynamic values
-  const encodeXML = (str: string) => {
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&apos;")
-  }
-
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-      <loc>${encodeXML(baseUrl)}</loc>
-      <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
-      <priority>1.0</priority>
-    </url>
-    <url>
-      <loc>${encodeXML(`${baseUrl}projects`)}</loc>
-      <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
-      <priority>0.9</priority>
-    </url>
-    <url>
-      <loc>${encodeXML(`${baseUrl}projects/vinylovers`)}</loc>
-      <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
-      <priority>0.9</priority>
-    </url>
-    <url>
-      <loc>${encodeXML(`${baseUrl}projects/portfolio`)}</loc>
-      <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
-      <priority>0.9</priority>
-    </url>
-    <url>
-      <loc>${encodeXML(`${baseUrl}projects/historycards`)}</loc>
-      <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
-      <priority>0.9</priority>
-    </url>
-  </urlset>`
-  
-  return new NextResponse(sitemap, {
-    headers: {
-      "Content-Type": "application/xml",
-      "Cache-Control": "public, s-maxage=86400, stale-while-revalidate",
-    },
-  })
+  const base = getSiteUrl();
+  const paths = ["/", "/about", "/archive/seen-live", ...collections.map((item) => `/archive/${item.slug}`), ...archiveItems.map((item) => `/archive/${item.collectionSlug}/${item.id}`)];
+  const pages = [...new Set(paths)].map((path) => ({ path, url: `${base}${path}` }));
+  return NextResponse.json({ site: base, total: pages.length, pages }, {
+    headers: { "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400" },
+  });
 }

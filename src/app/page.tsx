@@ -8,7 +8,6 @@ import { archiveItems, collections } from "../data/archive";
 // Homepage: editorial introduction first, practical archive navigation second.
 export default function HomePage() {
   const featuredItems = archiveItems.filter((item) => item.featured).slice(0, 3);
-  // The story cards are driven directly by the collection data in src/data/archive.ts.
 
   return (
     <>
@@ -23,7 +22,7 @@ export default function HomePage() {
             The memories worth keeping loud.
           </p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="/archive/seen-live">Explore the archive <ArrowRight size={17} /></Link>
+            <Link className="button button-primary" href="/archive/seen-live">Bands seen live<ArrowRight size={17} /></Link>
             <Link className="button button-ghost" href="/about">The story behind it <ArrowDownRight size={17} /></Link>
           </div>
           <div className="hero-bottom-note">
@@ -38,10 +37,11 @@ export default function HomePage() {
         <span className="home-archive-nav-label">EXPLORE THE ARCHIVE</span>
         <div className="home-archive-nav-links">
           <Link href="/archive/festivals">Festivals attended <ArrowRight size={14} aria-hidden="true" /></Link>
-          <Link href="/archive/cups">Festival cups <ArrowRight size={14} aria-hidden="true" /></Link>
-          <Link href="/archive/seen-live">Bands seen live <ArrowRight size={14} aria-hidden="true" /></Link>
+          <Link href="/archive/concerts">Concerts attended <ArrowRight size={14} aria-hidden="true" /></Link>          
           <Link href="/archive/vinyl">Vinyl collection <ArrowRight size={14} aria-hidden="true" /></Link>
           <Link href="/archive/meet-and-greets">Meet &amp; greets <ArrowRight size={14} aria-hidden="true" /></Link>
+          <Link href="/archive/cups">Festival cups <ArrowRight size={14} aria-hidden="true" /></Link>
+          <Link href="/archive/shirts">Shirts & Hoodies <ArrowRight size={14} aria-hidden="true" /></Link>
         </div>
       </nav>
 
@@ -59,11 +59,11 @@ export default function HomePage() {
 
       <section className="collections-section page-wrap section-pad">
         <SectionHeading
-          eyebrow="THE COLLECTIONS / 01—04"
+          eyebrow="THE COLLECTIONS / 01—06"
           title="Everything has a story."
           action={<Link className="inline-link" href="#explore-archive">Explore archive <ArrowRight size={15} /></Link>}
         >
-          Four collections, each preserving a different part of the story: festival weekends, physical keepsakes, records, and encounters.
+          Six collections, each preserving a different part of the story: festival weekends, physical keepsakes, records, and encounters.
         </SectionHeading>
         <div className="collection-grid">
           {collections.map((collection, index) => <CollectionCard key={collection.slug} collection={collection} index={index} />)}

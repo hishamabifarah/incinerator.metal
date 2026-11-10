@@ -85,7 +85,7 @@ export default function FestivalCupsPage() {
           <p>A catalogue of the cups collected from the festivals, one keepsake at a time.</p>
           <div className="archive-hero-meta"><span>COLLECTION GALLERY</span><span>FILTER BY FESTIVAL</span></div>
         </div>
-        <div className="archive-hero-index" aria-hidden="true">02</div>
+        <div className="archive-hero-index" aria-hidden="true">05</div>
       </section>
 
       <section className="archive-content-section">
