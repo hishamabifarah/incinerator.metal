@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
-import { isAdminAuthenticated } from "../../lib/admin-auth";
-import AdminDashboard from "./AdminDashboard";
+import { Suspense } from "react";
+import AdminContent from "./AdminContent";
 
-export const metadata: Metadata = { title: "Visitor analytics | Incinerator Metal", robots: { index: false, follow: false } };
-export default async function AdminPage() { if (!(await isAdminAuthenticated())) redirect("/admin/login"); return <AdminDashboard />; }
+export const metadata: Metadata = {
+  title: "Visitor analytics | Incinerator Metal",
+  robots: { index: false, follow: false },
+};
+
+export default function AdminPage() {
+  return (
+    <Suspense fallback={<div>Loading analytics dashboard...</div>}>
+      <AdminContent />
+    </Suspense>
+  );
+}

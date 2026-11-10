@@ -21,7 +21,7 @@ export function createAdminSession() {
   return `${payload}.${signature(payload)}`;
 }
 
-export function verifyAdminSession(token?: string | null) {
+export async function verifyAdminSession(token?: string | null) {
   if (!token) return false;
   const [expires, suppliedSignature, extra] = token.split(".");
   if (!expires || !suppliedSignature || extra) return false;
