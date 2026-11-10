@@ -1,7 +1,8 @@
-
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Suspense } from "react";
 import "./globals.css";
+import VisitorTracker from "../components/analytics/VisitorTracker";
 
 export const metadata: Metadata = {
   title: "INCINERATOR — A Life Measured in Riffs",
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Suspense fallback={null}>
+          <VisitorTracker />
+        </Suspense>
+      </body>
     </html>
   );
 }
