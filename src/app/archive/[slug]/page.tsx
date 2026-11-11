@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import ArchiveBrowser from "../../../components/ArchiveBrowser";
 import SectionHeading from "../../../components/SectionHeading";
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return { title: collection?.title ?? "Archive" };
 }
 
-export default async function CollectionPage({ params }: { params: Promise<{ slug: string }> }) {
+async function CollectionContent({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const collection = getCollection(slug);
 
@@ -59,5 +60,13 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         </Link>
       </div>
     </div>
+  );
+}
+
+export default function CollectionPage({ params }: { params: Promise<{ slug: string }> }) {
+  return (
+    <Suspense fallback={<div className="page-wrap archive-page" aria-busy="true" />}>
+      <CollectionContent params={params} />
+    </Suspense>
   );
 }

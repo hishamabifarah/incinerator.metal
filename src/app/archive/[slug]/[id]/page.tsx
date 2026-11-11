@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { ArrowLeft, ArrowUpRight, MapPin, CalendarDays, Tag } from "lucide-react";
 import { archiveItems, collections, getArchiveItem, getCollection } from "../../../..//data/archive";
 import bandsSeenLive from "../../../../data/bands-seen-live.json";
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return { title: item?.title ?? "Archive entry" };
 }
 
-export default async function ArchiveDetailPage({ params }: { params: Promise<{ slug: string; id: string }> }) {
+async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string; id: string }> }) {
   const { slug, id } = await params;
   const item = getArchiveItem(slug, id);
   const collection = getCollection(slug);
@@ -141,5 +142,13 @@ export default async function ArchiveDetailPage({ params }: { params: Promise<{ 
         </section>
       ) : null}
     </div>
+  );
+}
+
+export default function ArchiveDetailPage({ params }: { params: Promise<{ slug: string; id: string }> }) {
+  return (
+    <Suspense fallback={<div className="page-wrap detail-page" aria-busy="true" />}>
+      <ArchiveDetailContent params={params} />
+    </Suspense>
   );
 }
