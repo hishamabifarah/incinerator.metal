@@ -692,7 +692,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .archive-gallery-intro { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .archive-gallery-count { flex: 0 0 auto; color: var(--muted); font: 10px var(--font-mono); letter-spacing: .12em; }
 .archive-gallery-mobile { display: none; }
-.archive-gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 14px; }
+.archive-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 14px; }
 .archive-gallery-card { display: block; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .archive-gallery-image-wrap { position: relative; display: block; overflow: hidden; aspect-ratio: 4 / 3; background: #171719; border: 1px solid var(--line); }
 .archive-gallery-image { object-fit: cover; transition: transform .45s ease, opacity .3s ease; }

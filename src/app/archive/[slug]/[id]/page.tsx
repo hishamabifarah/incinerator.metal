@@ -41,7 +41,7 @@ async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string
   const festivalAliases: Record<string, string> = {
     "motocultor-2023": "Motocultor Festival 2023",
     "knotfest-2019": "Knotfest Meets Hellfest 2019",
-    "tolminator-2026": "Tolminator Metal Fest 2026",
+    "tolminator-2026": "Tolminator Metal Fest 2026"
   };
 
   const currentFestivalSlug = toFestivalSlug(id);
@@ -61,6 +61,9 @@ async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string
           .map((band) => band.name)
           .sort((a, b) => a.localeCompare(b))
       : [];
+
+  const bandsSeenAtEvent =
+    slug === "concerts" ? item.bandsSeenLive ?? [] : bandsSeenAtFestival;
 
   return (
     <div className="page-wrap detail-page">
@@ -101,20 +104,22 @@ async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string
               </div>
             ) : null}
           </div> */}
-          <div className="archive-bands">
-            <div className="archive-bands-heading">
-              <span>BANDS SEEN LIVE</span>
-              <span>{bandsSeenAtFestival.length} BANDS</span>
-            </div>
+          {(slug === "festivals" || slug === "concerts") ? (
+            <div className="archive-bands">
+              <div className="archive-bands-heading">
+                <span>BANDS SEEN LIVE</span>
+                <span>{bandsSeenAtEvent.length} BANDS</span>
+              </div>
 
-            <div className="archive-bands-grid">
-              {bandsSeenAtFestival.map((band) => (
-                <span key={band} className="archive-band">
-                  {band}
-                </span>
-              ))}
+              <div className="archive-bands-grid">
+                {bandsSeenAtEvent.map((band) => (
+                  <span key={band} className="archive-band">
+                    {band}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          ) : null}
 
           <Link className="button button-secondary" href={`/archive/${slug}`}>Return to collection <ArrowUpRight size={16} /></Link>
         </article>

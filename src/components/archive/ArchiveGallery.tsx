@@ -10,7 +10,7 @@ type ArchiveGalleryProps = {
   title: string;
 };
 
-const IMAGES_PER_PAGE = 8;
+const IMAGES_PER_PAGE = 6;
 
 export default function ArchiveGallery({ images, title }: ArchiveGalleryProps) {
   const [galleryImages, setGalleryImages] = useState(images);

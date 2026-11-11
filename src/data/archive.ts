@@ -28,6 +28,8 @@ export type ArchiveItem = {
   image: string;
   /** Optional photo gallery for festival and concert entries. */
   images?: ArchiveImage[];
+  /** Bands personally seen live at an individual concert. */
+  bandsSeenLive?: string[];
   tags: string[];
   featured?: boolean;
 };
@@ -474,6 +476,96 @@ export const archiveItems: ArchiveItem[] = [
     featured: false,
   },
   {
+    id: "cradle-of-filth-2024",
+    collectionSlug: "concerts",
+    title: "Cradle of Filth - By Order of the Dragon Tour",
+    subtitle: "Concert edition",
+    year: "2024",
+    location: "Esch-sur-Alzette, Luxembourg",
+    description:"",
+    image: "/images/concerts/cradle-of-filth-2024.jpg",
+    tags: ["Concert", "Luxembourg", "Live music"],
+    featured: false,
+    bandsSeenLive: ["Cradle of Filth", "Mental Cruelty", "Black Satellite"],
+    images: [
+    {
+      "src": "/images/concerts/cradle/cradleoffilth.jpg",
+      "alt": "Cradle of Filth — Live",
+      "caption": "Cradle of Filth"
+    },
+    {
+      "src": "/images/concerts/cradle/mentalcruelty.jpg",
+      "alt": "Mental Cruelty — Live",
+      "caption": "Mental Cruelty"
+    }, 
+    {
+      "src": "/images/concerts/cradle/blacksatellite.jpg",
+      "alt": "Black Satellite — Live",
+      "caption": "Black Satellite"
+    },
+  ]
+  },
+    {
+    id: "kreator-testament-anthrax-2024",
+    collectionSlug: "concerts",
+    title: "Kreator Testament Anthrax - European Tour",
+    subtitle: "Concert edition",
+    year: "2024",
+    location: "Esch-sur-Alzette, Luxembourg",
+    description:"",
+    image: "/images/concerts/kreator-2024.jpg",
+    tags: ["Concert", "Luxembourg", "Live music"],
+    featured: false,
+    bandsSeenLive: ["Kreator", "Testament", "Anthrax"],
+    images: [
+    {
+      "src": "/images/concerts/kreator/kreator.jpg",
+      "alt": "Kreator — Live",
+      "caption": "Kreator"
+    },
+    {
+      "src": "/images/concerts/kreator/testament.jpg",
+      "alt": "Testament — Live",
+      "caption": "Testament"
+    }, 
+    {
+      "src": "/images/concerts/kreator/anthrax.jpg",
+      "alt": "Anthrax— Live",
+      "caption": "Anthrax"
+    },
+  ]
+  },
+    {
+    id: "judas-priest-2025",
+    collectionSlug: "concerts",
+    title: "Judas Priest - Shield of Pain Tour",
+    subtitle: "Concert edition",
+    year: "2025",
+    location: "Esch-sur-Alzette, Luxembourg",
+    description:"",
+    image: "/images/concerts/judas-priest-2025.jpg",
+    tags: ["Concert", "Luxembourg", "Live music"],
+    featured: false,
+    bandsSeenLive: ["Judas Priest"],
+    images: [
+    {
+      "src": "/images/concerts/priest/01.jpg",
+      "alt": "Judas Priest 2025 — Live",
+      "caption": ""
+    },
+    {
+      "src": "/images/concerts/priest/02.jpg",
+      "alt": "Judas Priest 2025 — Live",
+      "caption": ""
+    }, 
+    {
+      "src": "/images/concerts/priest/03.jpg",
+      "alt": "Judas Priest 2025 — Live",
+      "caption": ""
+    },
+  ]
+  },
+  {
     id: "echoes-of-battle-vinyl",
     collectionSlug: "vinyl",
     title: "Caladan Brood",
@@ -484,51 +576,6 @@ export const archiveItems: ArchiveItem[] = [
     image: "/images/vinyls/vinyl-caladanbrood.jpg",
     tags: ["Vinyl", "Now spinning"],
     featured: true,
-  },
-  {
-    id: "signed-record-01",
-    collectionSlug: "signed-vinyl",
-    title: "A record with a story",
-    subtitle: "Signed edition",
-    year: "2025",
-    location: "Personal collection",
-    description: "Add the album, artist, signature details, and the story behind how you got it signed.",
-    image: "/images/signed-vinyl.svg",
-    tags: ["Signed", "Vinyl", "Memorabilia"],
-  },
-  {
-    id: "show-memory-01",
-    collectionSlug: "live",
-    title: "A night in the pit",
-    subtitle: "Live show",
-    year: "2025",
-    location: "Add venue",
-    description: "Add the band, venue, date, setlist, ticket, and any photographs you took at the show.",
-    image: "/images/live.svg",
-    tags: ["Concert", "Live"],
-    featured: true,
-  },
-  {
-    id: "wristband-01",
-    collectionSlug: "wristbands",
-    title: "Festival wristband",
-    subtitle: "Worn keepsake",
-    year: "2024",
-    location: "Festival archive",
-    description: "Record the festival, edition, dates, and any small detail that brings the experience back.",
-    image: "/images/wristbands.svg",
-    tags: ["Wristband", "Festival"],
-  },
-  {
-    id: "cup-01",
-    collectionSlug: "cups",
-    title: "Festival cup",
-    subtitle: "Reusable cup",
-    year: "2024",
-    location: "Festival archive",
-    description: "Add the printed design, festival, year, and where you found or collected the cup.",
-    image: "/images/cups.svg",
-    tags: ["Cup", "Merchandise"],
   },
   {
     id: "meet-and-greet-01",
@@ -554,3 +601,50 @@ export function getItemsForCollection(slug: string) {
 export function getArchiveItem(slug: string, id: string) {
   return archiveItems.find((item) => item.collectionSlug === slug && item.id === id);
 }
+
+
+// {
+//   id: "signed-record-01",
+//   collectionSlug: "signed-vinyl",
+//   title: "A record with a story",
+//   subtitle: "Signed edition",
+//   year: "2025",
+//   location: "Personal collection",
+//   description: "Add the album, artist, signature details, and the story behind how you got it signed.",
+//   image: "/images/signed-vinyl.svg",
+//   tags: ["Signed", "Vinyl", "Memorabilia"],
+// },
+// {
+//   id: "show-memory-01",
+//   collectionSlug: "live",
+//   title: "A night in the pit",
+//   subtitle: "Live show",
+//   year: "2025",
+//   location: "Add venue",
+//   description: "Add the band, venue, date, setlist, ticket, and any photographs you took at the show.",
+//   image: "/images/live.svg",
+//   tags: ["Concert", "Live"],
+//   featured: true,
+// },
+// {
+//   id: "wristband-01",
+//   collectionSlug: "wristbands",
+//   title: "Festival wristband",
+//   subtitle: "Worn keepsake",
+//   year: "2024",
+//   location: "Festival archive",
+//   description: "Record the festival, edition, dates, and any small detail that brings the experience back.",
+//   image: "/images/wristbands.svg",
+//   tags: ["Wristband", "Festival"],
+// },
+// {
+//   id: "cup-01",
+//   collectionSlug: "cups",
+//   title: "Festival cup",
+//   subtitle: "Reusable cup",
+//   year: "2024",
+//   location: "Festival archive",
+//   description: "Add the printed design, festival, year, and where you found or collected the cup.",
+//   image: "/images/cups.svg",
+//   tags: ["Cup", "Merchandise"],
+// },
