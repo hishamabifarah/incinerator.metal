@@ -1,3 +1,4 @@
+
 import { NextResponse } from "next/server";
 
 type LastFmImage = { "#text"?: string; size?: string };
@@ -70,7 +71,7 @@ export async function GET() {
     return NextResponse.json({
       configured: false,
       username,
-      nowPlaying: null,
+      lastPlayed: null,
       topAlbums: [],
     });
   }
@@ -84,7 +85,7 @@ export async function GET() {
   const recentParams = new URLSearchParams({
     ...common,
     method: "user.getrecenttracks",
-    limit: "1",
+    limit: "2",
   });
 
   const albumParams = new URLSearchParams({
@@ -133,8 +134,10 @@ export async function GET() {
         ? [rawTracks]
         : [];
 
-    const nowPlaying =
-      tracks.map(normalizeTrack).find((track) => track.nowPlaying) ?? null;
+    const lastPlayed =
+      tracks
+        .map(normalizeTrack)
+        .find((track) => !track.nowPlaying) ?? null;
 
     const rawAlbums = albumsPayload.topalbums?.album;
 
@@ -147,7 +150,7 @@ export async function GET() {
     return NextResponse.json({
       configured: true,
       username,
-      nowPlaying,
+      lastPlayed,
       topAlbums: albums.slice(0, 4).map(normalizeAlbum),
     });
   } catch {

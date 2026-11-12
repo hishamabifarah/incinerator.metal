@@ -582,7 +582,7 @@ export const archiveItems: ArchiveItem[] = [
 
   // Meet & Greet entries
   {
-    "id": "meet-and-greet-suffocation-2017",
+    "id": "suffocation-2017",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Suffocation",
     "subtitle": "Suffocation",
@@ -593,7 +593,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Suffocation", "Artist", "Memory"]
   },
   {
-    "id": "meet-and-greet-kreator-2024",
+    "id": "kreator-2024",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Kreator",
     "subtitle": "Kreator",
@@ -604,7 +604,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Kreator", "Artist", "Memory"]
   },
   {
-    "id": "meet-and-greet-suffocation-2025",
+    "id": "suffocation-2025",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Suffocation",
     "subtitle": "Suffocation",
@@ -615,7 +615,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Suffocation", "Artist", "Memory"]
   },
   {
-    "id": "meet-and-greet-nile-2025",
+    "id": "nile-2025",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Nile",
     "subtitle": "Nile",
@@ -626,7 +626,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Nile", "Artist", "Memory"]
   },
   {
-    "id": "meet-and-greet-rotting-christ-2025",
+    "id": "rotting-christ-2025",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Rotting Christ",
     "subtitle": "Rotting Christ",
@@ -637,7 +637,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Rotting Christ", "Artist", "Memory"]
   },
   {
-    "id": "meet-and-greet-ne-obliviscaris-2025",
+    "id": "ne-obliviscaris-2025",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Ne Obliviscaris",
     "subtitle": "Ne Obliviscaris",
@@ -648,7 +648,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Ne Obliviscaris", "Artist", "Memory"]
   },
     {
-    "id": "meet-and-greet-immolation-2026",
+    "id": "immolation-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Immolation",
     "subtitle": "Immolation",
@@ -659,7 +659,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Immolation", "Artist", "Memory"]
   },
     {
-    "id": "meet-and-greet-marduk-2026",
+    "id": "marduk-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Marduk",
     "subtitle": "Marduk",
@@ -670,7 +670,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Marduk", "Artist", "Memory"]
   },
     {
-    "id": "meet-and-greet-borknagar-2026",
+    "id": "borknagar-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Borknagar",
     "subtitle": "Borknagar",
@@ -681,7 +681,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Borknagar", "Artist", "Memory"]
   },
     {
-    "id": "meet-and-greet-amorphis-2026",
+    "id": "amorphis-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Amorphis",
     "subtitle": "Amorphis",
@@ -692,7 +692,7 @@ export const archiveItems: ArchiveItem[] = [
     "tags": ["Amorphis", "Artist", "Memory"]
   },
     {
-    "id": "meet-and-greet-der-weg-einer-freiheit-2026",
+    "id": "der-weg-einer-freiheit-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Der Weg Einer Freiheit",
     "subtitle": "Der Weg Einer Freiheit",
@@ -702,6 +702,8 @@ export const archiveItems: ArchiveItem[] = [
     "image": "/images/meet/derweg.jpg",
     "tags": ["Der Weg Einer Freiheit", "Artist", "Memory"]
   },
+
+  // Shirt and hoodie entries
   {
     id: "shirt-cradle-of-filth-2024",
     collectionSlug: "shirts",

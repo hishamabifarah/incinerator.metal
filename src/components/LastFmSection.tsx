@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -30,7 +31,7 @@ type LastFmAlbum = {
 type LastFmResponse = {
   configured: boolean;
   username: string;
-  nowPlaying: LastFmTrack | null;
+  lastPlayed: LastFmTrack | null;
   topAlbums: LastFmAlbum[];
 };
 
@@ -71,7 +72,7 @@ export default function LastFmSection() {
     };
   }, []);
 
-  const featured = data?.nowPlaying ?? null;
+  const featured = data?.lastPlayed ?? null;
 
   return (
     <section
@@ -130,7 +131,7 @@ export default function LastFmSection() {
         </div>
       ) : (
         <div className="lastfm-content">
-          {/* Currently playing */}
+          {/* Last played track */}
           <article className="lastfm-featured">
             <div className="lastfm-featured-art">
               {featured?.image ? (
@@ -196,9 +197,9 @@ export default function LastFmSection() {
           <div className="lastfm-recent">
             <div className="lastfm-recent-heading">
               <span>TOP ALBUMS / LAST 7 DAYS</span>
-                  <span>
-                    {String(data.topAlbums.length).padStart(2, "0")} ALBUMS
-                  </span>
+              <span>
+                {String(data.topAlbums.length).padStart(2, "0")} ALBUMS
+              </span>
             </div>
 
             {data.topAlbums.length ? (
