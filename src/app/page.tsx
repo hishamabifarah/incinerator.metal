@@ -238,13 +238,20 @@ export default function HomePage() {
                 A random selection from the record collection. Every visit
                 puts a different record in the spotlight.
               </p>
-
-              <Link
-                className="inline-link"
-                href={`/archive/vinyl/${spinningVinyl.id}`}
-              >
-                View this record <ArrowRight size={15} />
-              </Link>
+              <div className="spinning-links">
+                <Link
+                  className="inline-link"
+                  href={`/archive/vinyl/${spinningVinyl.id}`}
+                >
+                  View this record <ArrowRight size={15} />
+                </Link>
+                <Link
+                  className="inline-link"
+                  href={`/archive/vinyl/`}
+                >
+                  View vinyl collection <ArrowRight size={15} />
+                </Link>
+              </div>
             </>
           ) : (
             <>
