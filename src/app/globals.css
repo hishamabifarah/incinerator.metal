@@ -209,6 +209,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
    -------------------------------------------------------------------------- */
 .featured-section { background: #101012; border-block: 1px solid rgba(255,255,255,.045); }
 .archive-item-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.featured-grid > :nth-child(4) { display: none; }
 
 .archive-infinite-loader {
   min-height: 76px;
@@ -290,7 +291,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .spinning-art { position: relative; min-height: 420px; display: grid; place-items: center; background: radial-gradient(ellipse at center, #242124 0, #111012 55%, #0a0a0b 75%); border: 1px solid var(--line); }
 .spinning-vinyl-artwork {
   display: block;
-  width: min(100%, 620px);
+  width: min(100%, 560px);
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 4px;
@@ -472,6 +473,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .collection-card { grid-column: span 6; }
   .collection-card:nth-child(1), .collection-card:nth-child(2) { min-height: 300px; }
   .archive-item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured-grid > :nth-child(4) { display: block; }
   .detail-layout { grid-template-columns: 1fr 1fr; gap: 28px; }
   .detail-art { min-height: 440px; }
   .about-story-grid { grid-template-columns: 35px 1fr; }

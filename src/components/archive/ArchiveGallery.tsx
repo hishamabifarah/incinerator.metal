@@ -35,6 +35,11 @@ const GALLERY_COPY: Record<
     highlight: "pride.",
     description: "Band shirts, tour designs, and the stories behind every piece.",
   },
+  "meet-and-greets": {
+    lead: "Beyond the",
+    highlight: "stage.",
+    description: "The encounters, signed keepsakes, and moments shared with the artists.",
+  },
 };
 
 const IMAGES_PER_PAGE = 6;

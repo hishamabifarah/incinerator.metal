@@ -125,7 +125,7 @@ async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string
         </article>
       </section>
 
-      {(["festivals", "concerts", "vinyl", "shirts"].includes(slug) &&
+      {(["festivals", "concerts", "vinyl", "shirts", "meet-and-greets"].includes(slug) &&
         item.images?.length) ? (
         <ArchiveGallery
           images={item.images}

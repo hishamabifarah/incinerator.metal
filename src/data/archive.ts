@@ -565,6 +565,8 @@ export const archiveItems: ArchiveItem[] = [
       },
     ]
   },
+
+  // Vinyl entries
   {
     id: "echoes-of-battle-vinyl",
     collectionSlug: "vinyl",
@@ -577,16 +579,128 @@ export const archiveItems: ArchiveItem[] = [
     tags: ["Vinyl", "Now spinning"],
     featured: true,
   },
+
+  // Meet & Greet entries
   {
-    id: "meet-and-greet-kreator",
-    collectionSlug: "meet-and-greets",
-    title: "An artist encounter",
-    subtitle: "Meet & greet",
-    year: "2023",
-    location: "Add venue",
-    description: "Document who you met, where it happened, and the story you want to remember.",
-    image: "/images/meet-and-greets.svg",
-    tags: ["Artist", "Memory"],
+    "id": "meet-and-greet-suffocation-2017",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Suffocation",
+    "subtitle": "Suffocation",
+    "year": "2017",
+    "location": "Summer Breeze Festival, Dinkelsbühl, Germany",
+    "description": "A moment with Suffocation.",
+    "image": "/images/meet/suffocation-2017.jpg",
+    "tags": ["Suffocation", "Artist", "Memory"]
+  },
+  {
+    "id": "meet-and-greet-kreator-2024",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Kreator",
+    "subtitle": "Kreator",
+    "year": "2024",
+    "location": "Rochal, Esch-sur-Alzette, Luxembourg",
+    "description": "A moment with Kreator.",
+    "image": "/images/meet/kreator.jpg",
+    "tags": ["Kreator", "Artist", "Memory"]
+  },
+  {
+    "id": "meet-and-greet-suffocation-2025",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Suffocation",
+    "subtitle": "Suffocation",
+    "year": "2025",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Suffocation.",
+    "image": "/images/meet/suffocation-2025.jpg",
+    "tags": ["Suffocation", "Artist", "Memory"]
+  },
+  {
+    "id": "meet-and-greet-nile-2025",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Nile",
+    "subtitle": "Nile",
+    "year": "2025",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Nile.",
+    "image": "/images/meet/nile.jpg",
+    "tags": ["Nile", "Artist", "Memory"]
+  },
+  {
+    "id": "meet-and-greet-rotting-christ-2025",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Rotting Christ",
+    "subtitle": "Rotting Christ",
+    "year": "2025",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Rotting Christ.",
+    "image": "/images/meet/rottingchrist.jpg",
+    "tags": ["Rotting Christ", "Artist", "Memory"]
+  },
+  {
+    "id": "meet-and-greet-ne-obliviscaris-2025",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Ne Obliviscaris",
+    "subtitle": "Ne Obliviscaris",
+    "year": "2025",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Ne Obliviscaris.",
+    "image": "/images/meet/neo.jpg",
+    "tags": ["Ne Obliviscaris", "Artist", "Memory"]
+  },
+    {
+    "id": "meet-and-greet-immolation-2026",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Immolation",
+    "subtitle": "Immolation",
+    "year": "2026",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Immolation.",
+    "image": "/images/meet/immolation.jpg",
+    "tags": ["Immolation", "Artist", "Memory"]
+  },
+    {
+    "id": "meet-and-greet-marduk-2026",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Marduk",
+    "subtitle": "Marduk",
+    "year": "2026",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Marduk.",
+    "image": "/images/meet/marduk.jpg",
+    "tags": ["Marduk", "Artist", "Memory"]
+  },
+    {
+    "id": "meet-and-greet-borknagar-2026",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Borknagar",
+    "subtitle": "Borknagar",
+    "year": "2026",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Borknagar.",
+    "image": "/images/meet/borknagar.jpg",
+    "tags": ["Borknagar", "Artist", "Memory"]
+  },
+    {
+    "id": "meet-and-greet-amorphis-2026",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Amorphis",
+    "subtitle": "Amorphis",
+    "year": "2026",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Amorphis.",
+    "image": "/images/meet/amorphis.jpg",
+    "tags": ["Amorphis", "Artist", "Memory"]
+  },
+    {
+    "id": "meet-and-greet-der-weg-einer-freiheit-2026",
+    "collectionSlug": "meet-and-greets",
+    "title": "Meet & Greet with Der Weg Einer Freiheit",
+    "subtitle": "Der Weg Einer Freiheit",
+    "year": "2026",
+    "location": "Brutal Assault Festival, Czech Republic",
+    "description": "A moment with Der Weg Einer Freiheit.",
+    "image": "/images/meet/derweg.jpg",
+    "tags": ["Der Weg Einer Freiheit", "Artist", "Memory"]
   },
   {
     id: "shirt-cradle-of-filth-2024",

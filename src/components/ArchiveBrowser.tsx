@@ -15,10 +15,10 @@ export default function ArchiveBrowser({ items }: { items: ArchiveItem[] }) {
   const loadMoreRef = useRef<HTMLDivElement | null>(null);
   const loadingTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Vinyl and shirts progressively reveal entries as the visitor approaches
-  // the end of the list. Other archive collections keep their full grid.
+  // Larger collections progressively reveal entries as the visitor approaches
+  // the end of the list.
   const usesInfiniteScroll = items.some((item) =>
-    item.collectionSlug === "vinyl" || item.collectionSlug === "shirts"
+    ["vinyl", "shirts", "meet-and-greets"].includes(item.collectionSlug)
   );
 
   const years = useMemo(

@@ -38,7 +38,7 @@ export default function HomePage() {
 
   useEffect(() => {
     // Select three unique random archive entries.
-    setFeaturedItems(shuffleItems(archiveItems).slice(0, 3));
+    setFeaturedItems(shuffleItems(archiveItems).slice(0, 4));
 
     // Select one random record from the vinyl collection.
     const vinylItems = archiveItems.filter(
