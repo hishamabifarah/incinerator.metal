@@ -1,60 +1,153 @@
+
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight, Disc3, Flame, Headphones, Ticket } from "lucide-react";
+import {
+  ArrowDownRight,
+  ArrowRight,
+  Disc3,
+  Flame,
+  Headphones,
+  Ticket,
+} from "lucide-react";
+
 import CollectionCard from "../components/CollectionCard";
 import ArchiveItemCard from "../components/ArchiveItemCard";
 import SectionHeading from "../components/SectionHeading";
 import { archiveItems, collections } from "../data/archive";
 import LastFmSection from "../components/LastFmSection";
 
-// Homepage: editorial introduction first, practical archive navigation second.
+import type { ArchiveItem } from "../data/archive";
+
+// Fisher-Yates shuffle: returns a randomly ordered copy.
+function shuffleItems<T>(items: T[]): T[] {
+  const shuffled = [...items];
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled;
+}
+
 export default function HomePage() {
-  const featuredItems = archiveItems.filter((item) => item.featured).slice(0, 3);
+  const [featuredItems, setFeaturedItems] = useState<ArchiveItem[]>([]);
+  const [spinningVinyl, setSpinningVinyl] = useState<ArchiveItem | null>(null);
+
+  useEffect(() => {
+    // Select three unique random archive entries.
+    setFeaturedItems(shuffleItems(archiveItems).slice(0, 3));
+
+    // Select one random record from the vinyl collection.
+    const vinylItems = archiveItems.filter(
+      (item) => item.collectionSlug === "vinyl"
+    );
+
+    setSpinningVinyl(
+      vinylItems.length
+        ? vinylItems[Math.floor(Math.random() * vinylItems.length)]
+        : null
+    );
+  }, []);
 
   return (
     <>
       <section className="hero">
         <div className="hero-backdrop" aria-hidden="true" />
         <div className="hero-grain" aria-hidden="true" />
+
         <div className="hero-content page-wrap">
-          <p className="eyebrow hero-eyebrow"><span className="live-dot" /> PERSONAL METAL ARCHIVE / EST. IN THE PIT</p>
-          <h1>A LIFE<br />MEASURED IN <span>RIFFS.</span></h1>
-          <p className="hero-description">
-            The shows that shook the ground. The records that never leave the shelf.
-            The memories worth keeping loud.
+          <p className="eyebrow hero-eyebrow">
+            <span className="live-dot" /> PERSONAL METAL ARCHIVE / EST. IN THE PIT
           </p>
+
+          <h1>
+            A LIFE
+            <br />
+            MEASURED IN <span>RIFFS.</span>
+          </h1>
+
+          <p className="hero-description">
+            The shows that shook the ground. The records that never leave the
+            shelf. The memories worth keeping loud.
+          </p>
+
           <div className="hero-actions">
-            <Link className="button button-primary" href="/archive/seen-live">Bands seen live<ArrowRight size={17} /></Link>
-            <Link className="button button-ghost" href="/about">The story behind it <ArrowDownRight size={17} /></Link>
+            <Link className="button button-primary" href="/archive/seen-live">
+              Bands seen live <ArrowRight size={17} />
+            </Link>
+
+            <Link className="button button-ghost" href="/about">
+              The story behind it <ArrowDownRight size={17} />
+            </Link>
           </div>
+
           <div className="hero-bottom-note">
             <span>LOUD MUSIC. LONG MEMORY.</span>
             <span>33° 53′ N / HEAVY ROTATION</span>
           </div>
         </div>
-        <div className="hero-side-label" aria-hidden="true">DOCUMENTING THE NOISE</div>
+
+        <div className="hero-side-label" aria-hidden="true">
+          DOCUMENTING THE NOISE
+        </div>
       </section>
 
-      <nav id="explore-archive" className="home-archive-nav page-wrap" aria-label="Explore the archive">
+      <nav
+        id="explore-archive"
+        className="home-archive-nav page-wrap"
+        aria-label="Explore the archive"
+      >
         <span className="home-archive-nav-label">EXPLORE THE ARCHIVE</span>
+
         <div className="home-archive-nav-links">
-          <Link href="/archive/festivals">Festivals attended <ArrowRight size={14} aria-hidden="true" /></Link>
-          <Link href="/archive/concerts">Concerts attended <ArrowRight size={14} aria-hidden="true" /></Link>          
-          <Link href="/archive/vinyl">Vinyl collection <ArrowRight size={14} aria-hidden="true" /></Link>
-          <Link href="/archive/meet-and-greets">Meet &amp; greets <ArrowRight size={14} aria-hidden="true" /></Link>
-          <Link href="/archive/cups">Festival cups <ArrowRight size={14} aria-hidden="true" /></Link>
-          <Link href="/archive/shirts">Shirts & Hoodies <ArrowRight size={14} aria-hidden="true" /></Link>
+          <Link href="/archive/festivals">
+            Festivals attended <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+          <Link href="/archive/concerts">
+            Concerts attended <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+          <Link href="/archive/vinyl">
+            Vinyl collection <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+          <Link href="/archive/meet-and-greets">
+            Meet &amp; greets <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+          <Link href="/archive/cups">
+            Festival cups <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+          <Link href="/archive/shirts">
+            Shirts &amp; Hoodies <ArrowRight size={14} aria-hidden="true" />
+          </Link>
         </div>
       </nav>
 
       <section className="intro-section page-wrap section-pad">
-        <div className="intro-mark"><Flame size={27} strokeWidth={1.3} /></div>
+        <div className="intro-mark">
+          <Flame size={27} strokeWidth={1.3} />
+        </div>
+
         <div className="intro-copy">
           <p className="eyebrow">NOT JUST A COLLECTION</p>
-          <h2>Some things deserve<br />more than a camera roll.</h2>
+          <h2>
+            Some things deserve
+            <br />
+            more than a camera roll.
+          </h2>
         </div>
+
         <div className="intro-aside">
-          <p>INCINERATOR is a personal archive of a life spent around heavy music. A home for physical keepsakes, live moments, and the stories that connect them.</p>
-          <Link className="inline-link" href="/about">Read the story <ArrowRight size={15} /></Link>
+          <p>
+            INCINERATOR is a personal archive of a life spent around heavy
+            music. A home for physical keepsakes, live moments, and the stories
+            that connect them.
+          </p>
+
+          <Link className="inline-link" href="/about">
+            Read the story <ArrowRight size={15} />
+          </Link>
         </div>
       </section>
 
@@ -62,56 +155,124 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="THE COLLECTIONS / 01—06"
           title="Everything has a story."
-          action={<Link className="inline-link" href="#explore-archive">Explore archive <ArrowRight size={15} /></Link>}
+          action={
+            <Link className="inline-link" href="#explore-archive">
+              Explore archive <ArrowRight size={15} />
+            </Link>
+          }
         >
-          Six collections, each preserving a different part of the story: festival weekends, physical keepsakes, records, and encounters.
+          Six collections, each preserving a different part of the story:
+          festival weekends, physical keepsakes, records, and encounters.
         </SectionHeading>
+
         <div className="collection-grid">
-          {collections.map((collection, index) => <CollectionCard key={collection.slug} collection={collection} index={index} />)}
+          {collections.map((collection, index) => (
+            <CollectionCard
+              key={collection.slug}
+              collection={collection}
+              index={index}
+            />
+          ))}
         </div>
       </section>
 
       <section className="featured-section section-pad">
         <div className="page-wrap">
           <SectionHeading
-            eyebrow="RECENTLY DOCUMENTED"
+            eyebrow="RANDOMLY SELECTED FROM THE ARCHIVE"
             title="Filed under: unforgettable."
-            action={<Link className="inline-link" href="/archive/festivals">View all memories <ArrowRight size={15} /></Link>}
           >
-            A living record. New shows, new finds, and old memories brought back into focus.
+            Three memories, pulled at random from the archive. Every visit
+            brings a different selection.
           </SectionHeading>
-          <div className="archive-item-grid featured-grid">
-            {featuredItems.map((item) => <ArchiveItemCard key={item.id} item={item} />)}
-          </div>
-        </div>
-      </section>
 
-      <section className="manifesto-section page-wrap section-pad">
-        <div className="manifesto-panel">
-          <div className="manifesto-icon"><Disc3 size={31} strokeWidth={1.2} /></div>
-          <p className="eyebrow">THE RULES ARE SIMPLE</p>
-          <h2>Keep the records.<br /><span>Keep the stories.</span></h2>
-          <p className="manifesto-copy">A wristband can take you back to a weekend. A record can take you back to a room. This archive keeps those details from disappearing into the scroll.</p>
-          <Link className="button button-primary" href="/archive/vinyl">Enter the vault <ArrowRight size={16} /></Link>
-          <div className="manifesto-stamp" aria-hidden="true">PLAY<br />LOUD</div>
+          <div className="archive-item-grid featured-grid">
+            {featuredItems.map((item) => (
+              <ArchiveItemCard key={item.id} item={item} />
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="now-spinning-section page-wrap section-pad">
         <div className="spinning-art">
-          <div className="record-record"><span className="record-label">INC<br />001</span></div>
-          <div className="spinning-caption"><Headphones size={16} /> CURRENTLY IN HEAVY ROTATION</div>
+          {spinningVinyl ? (
+            <>
+              {spinningVinyl.image ? (
+                <img
+                  className="spinning-vinyl-artwork"
+                  src={spinningVinyl.image}
+                  alt={`${spinningVinyl.title} vinyl artwork`}
+                />
+              ) : (
+                <div className="record-record">
+                  <span className="record-label">INC<br />001</span>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="record-record">
+              <span className="record-label">INC<br />001</span>
+            </div>
+          )}
+
+          <div className="spinning-caption">
+            <Headphones size={16} /> RANDOM PICK FROM THE VINYL VAULT
+          </div>
         </div>
+
         <div className="spinning-copy">
           <p className="eyebrow">SIDE A / NOW SPINNING</p>
-          <h2>Not everything<br />belongs in a playlist.</h2>
-          <p>Some records need a needle, a little surface noise, and time. This space is ready for your turntable videos, album notes, and listening sessions.</p>
-          <Link className="inline-link" href="/archive/vinyl">Explore the vinyl vault <ArrowRight size={15} /></Link>
-          <div className="spinning-meta"><span><Disc3 size={15} /> ANALOG OBSESSION</span><span><Ticket size={15} /> PERSONAL ARCHIVE</span></div>
+
+          {spinningVinyl ? (
+            <>
+              <h2>{spinningVinyl.title}</h2>
+
+              {spinningVinyl.subtitle && (
+                <p className="spinning-subtitle">
+                  {spinningVinyl.subtitle}
+                </p>
+              )}
+
+              <p>
+                A random selection from the record collection. Every visit
+                puts a different record in the spotlight.
+              </p>
+
+              <Link
+                className="inline-link"
+                href={`/archive/vinyl/${spinningVinyl.id}`}
+              >
+                View this record <ArrowRight size={15} />
+              </Link>
+            </>
+          ) : (
+            <>
+              <h2>
+                Not everything
+                <br />
+                belongs in a playlist.
+              </h2>
+
+              <p>
+                Add vinyl records to your archive to bring this section to
+                life.
+              </p>
+            </>
+          )}
+
+          <div className="spinning-meta">
+            <span>
+              <Disc3 size={15} /> ANALOG OBSESSION
+            </span>
+            <span>
+              <Ticket size={15} /> PERSONAL ARCHIVE
+            </span>
+          </div>
         </div>
       </section>
 
-        <LastFmSection />
+      <LastFmSection />
     </>
   );
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ArrowLeft, ArrowUpRight, MapPin, CalendarDays, Tag } from "lucide-react";
-import { archiveItems, collections, getArchiveItem, getCollection } from "../../../..//data/archive";
+import { archiveItems, getArchiveItem, getCollection } from "../../../..//data/archive";
 import bandsSeenLive from "../../../../data/bands-seen-live.json";
 import ArchiveGallery from "../../../../components/archive/ArchiveGallery";
 
