@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import type { ArchiveItem } from "../data/archive";
 import ArchiveItemCard from "../components/ArchiveItemCard";
@@ -10,6 +10,16 @@ import ArchiveItemCard from "../components/ArchiveItemCard";
 export default function ArchiveBrowser({ items }: { items: ArchiveItem[] }) {
   const [query, setQuery] = useState("");
   const [year, setYear] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(8);
+  const [isLoading, setIsLoading] = useState(false);
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
+  const loadingTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Vinyl and shirts progressively reveal entries as the visitor approaches
+  // the end of the list. Other archive collections keep their full grid.
+  const usesInfiniteScroll = items.some((item) =>
+    item.collectionSlug === "vinyl" || item.collectionSlug === "shirts"
+  );
 
   const years = useMemo(
     () => Array.from(new Set(items.map((item) => item.year))).sort((a, b) => b.localeCompare(a)),
@@ -35,6 +45,44 @@ export default function ArchiveBrowser({ items }: { items: ArchiveItem[] }) {
       return matchesQuery && matchesYear;
     });
   }, [items, query, year]);
+
+  useEffect(() => {
+    if (loadingTimerRef.current) clearTimeout(loadingTimerRef.current);
+    setVisibleCount(6);
+    setIsLoading(false);
+  }, [query, year, items]);
+
+  useEffect(() => {
+    const sentinel = loadMoreRef.current;
+    if (!usesInfiniteScroll || !sentinel || isLoading || visibleCount >= filteredItems.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+
+        observer.disconnect();
+        setIsLoading(true);
+        loadingTimerRef.current = setTimeout(() => {
+          setVisibleCount((current) => Math.min(current + 8, filteredItems.length));
+          setIsLoading(false);
+        }, 350);
+      },
+      { rootMargin: "500px 0px" },
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [filteredItems.length, isLoading, usesInfiniteScroll, visibleCount]);
+
+  useEffect(() => () => {
+    if (loadingTimerRef.current) clearTimeout(loadingTimerRef.current);
+  }, []);
+
+  const displayedItems = usesInfiniteScroll
+    ? filteredItems.slice(0, visibleCount)
+    : filteredItems;
 
   return (
     <div className="archive-browser">
@@ -75,9 +123,31 @@ export default function ArchiveBrowser({ items }: { items: ArchiveItem[] }) {
       </div>
 
       {filteredItems.length ? (
-        <div className="archive-item-grid">
-          {filteredItems.map((item) => <ArchiveItemCard key={item.id} item={item} />)}
-        </div>
+        <>
+          <div className="archive-item-grid">
+            {displayedItems.map((item) => <ArchiveItemCard key={item.id} item={item} />)}
+          </div>
+          {usesInfiniteScroll && visibleCount < filteredItems.length ? (
+            <div
+              className="archive-infinite-loader"
+              ref={loadMoreRef}
+              aria-live="polite"
+              aria-busy={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <span className="archive-loading-spinner" aria-hidden="true" />
+                  <span>Loading more entries...</span>
+                </>
+              ) : (
+                <span className="archive-loader-hint">Scroll to discover more</span>
+              )}
+            </div>
+          ) : null}
+          {usesInfiniteScroll && visibleCount >= filteredItems.length ? (
+            <p className="archive-end-message">You’ve reached the end of the collection.</p>
+          ) : null}
+        </>
       ) : (
         <div className="empty-state">
           <span className="empty-state-symbol">∅</span>

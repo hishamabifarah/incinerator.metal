@@ -44,7 +44,7 @@ export const collections: Collection[] = [
   //   accent: "crimson",
   //   image: "images/hero/hero-stage.jpg",
   // },
-    {
+  {
     slug: "festivals",
     title: "Festivals",
     eyebrow: "MULTIPLE DAYS. ONE OBSESSION.",
@@ -89,7 +89,7 @@ export const collections: Collection[] = [
   //   accent: "green",
   //   image: "/images/wristbands.svg",
   // },
-    {
+  {
     slug: "meet-and-greets",
     title: "Meet & greets",
     eyebrow: "BACKSTAGE STORIES",
@@ -125,103 +125,103 @@ export const collections: Collection[] = [
 // description: "A festival entry ready for your photos, lineup notes, and personal memories. Replace this sample with your own record.",
 //
 export const archiveItems: ArchiveItem[] = [
-{
-  "id": "hellfest-2014",
-  "collectionSlug": "festivals",
-  "title": "Hellfest 2014",
-  "subtitle": "Festival edition",
-  "year": "2014",
-  "location": "Clisson, France",
-  "description": "",
-  "image": "/images/festivals/hellfest2014.jpg",
-  "images": [
-    {
-      "src": "/images/festivals/hellfest-2014/01.jpg",
-      "alt": "Festival atmosphere at Hellfest 2014 in Clisson, France",
-      "caption": "Hellfest 2014 — festival atmosphere"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/02.jpg",
-      "alt": "A view from the Hellfest 2014 festival grounds",
-      "caption": "Around the festival grounds"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/03.jpg",
-      "alt": "A scene from the Hellfest 2014 festival",
-      "caption": "A moment at Hellfest"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/04.jpg",
-      "alt": "Festival surroundings at Hellfest 2014",
-      "caption": "The Hellfest surroundings"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/05.jpg",
-      "alt": "The atmosphere at Hellfest 2014",
-      "caption": "The festival experience"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/06.jpg",
-      "alt": "Another view of the Hellfest 2014 festival site",
-      "caption": "Clisson, France — Hellfest 2014"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/annihilator.jpg",
-      "alt": "Annihilator performing live at Hellfest 2014",
-      "caption": "Annihilator"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/behemoth.jpg",
-      "alt": "Behemoth performing live at Hellfest 2014",
-      "caption": "Behemoth"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/blacksabbath.jpg",
-      "alt": "Black Sabbath performing live at Hellfest 2014",
-      "caption": "Black Sabbath"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/emperor.jpg",
-      "alt": "Emperor performing live at Hellfest 2014",
-      "caption": "Emperor"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/gorgoroth.jpg",
-      "alt": "Gorgoroth performing live at Hellfest 2014",
-      "caption": "Gorgoroth"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/incantation.jpg",
-      "alt": "Incantation performing live at Hellfest 2014",
-      "caption": "Incantation"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/ironmaiden.jpg",
-      "alt": "Iron Maiden performing live at Hellfest 2014",
-      "caption": "Iron Maiden"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/sepultura.jpg",
-      "alt": "Sepultura performing live at Hellfest 2014",
-      "caption": "Sepultura"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/slayer.jpg",
-      "alt": "Slayer performing live at Hellfest 2014",
-      "caption": "Slayer"
-    },
-    {
-      "src": "/images/festivals/hellfest-2014/d666.jpg",
-      "alt": "Deströyer 666 performing live at Hellfest 2014",
-      "caption": "Deströyer 666"
-    }
-  ],
-  "tags": [
-    "Festival",
-    "France",
-    "Live music"
-  ],
-  "featured": true
+  {
+    "id": "hellfest-2014",
+    "collectionSlug": "festivals",
+    "title": "Hellfest 2014",
+    "subtitle": "Festival edition",
+    "year": "2014",
+    "location": "Clisson, France",
+    "description": "",
+    "image": "/images/festivals/hellfest2014.jpg",
+    "images": [
+      {
+        "src": "/images/festivals/hellfest-2014/01.jpg",
+        "alt": "Festival atmosphere at Hellfest 2014 in Clisson, France",
+        "caption": "Hellfest 2014 — festival atmosphere"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/02.jpg",
+        "alt": "A view from the Hellfest 2014 festival grounds",
+        "caption": "Around the festival grounds"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/03.jpg",
+        "alt": "A scene from the Hellfest 2014 festival",
+        "caption": "A moment at Hellfest"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/04.jpg",
+        "alt": "Festival surroundings at Hellfest 2014",
+        "caption": "The Hellfest surroundings"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/05.jpg",
+        "alt": "The atmosphere at Hellfest 2014",
+        "caption": "The festival experience"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/06.jpg",
+        "alt": "Another view of the Hellfest 2014 festival site",
+        "caption": "Clisson, France — Hellfest 2014"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/annihilator.jpg",
+        "alt": "Annihilator performing live at Hellfest 2014",
+        "caption": "Annihilator"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/behemoth.jpg",
+        "alt": "Behemoth performing live at Hellfest 2014",
+        "caption": "Behemoth"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/blacksabbath.jpg",
+        "alt": "Black Sabbath performing live at Hellfest 2014",
+        "caption": "Black Sabbath"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/emperor.jpg",
+        "alt": "Emperor performing live at Hellfest 2014",
+        "caption": "Emperor"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/gorgoroth.jpg",
+        "alt": "Gorgoroth performing live at Hellfest 2014",
+        "caption": "Gorgoroth"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/incantation.jpg",
+        "alt": "Incantation performing live at Hellfest 2014",
+        "caption": "Incantation"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/ironmaiden.jpg",
+        "alt": "Iron Maiden performing live at Hellfest 2014",
+        "caption": "Iron Maiden"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/sepultura.jpg",
+        "alt": "Sepultura performing live at Hellfest 2014",
+        "caption": "Sepultura"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/slayer.jpg",
+        "alt": "Slayer performing live at Hellfest 2014",
+        "caption": "Slayer"
+      },
+      {
+        "src": "/images/festivals/hellfest-2014/d666.jpg",
+        "alt": "Deströyer 666 performing live at Hellfest 2014",
+        "caption": "Deströyer 666"
+      }
+    ],
+    "tags": [
+      "Festival",
+      "France",
+      "Live music"
+    ],
+    "featured": true
   },
   {
     id: "hellfest-2015",
@@ -230,7 +230,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2015",
     location: "Clisson, France",
-    description:"",
+    description: "",
     image: "/images/festivals/hellfest2015.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
@@ -339,7 +339,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2015",
     location: "Istanbul, Turkey",
-    description:"",
+    description: "",
     image: "/images/festivals/headbangers-weekend-2015.jpg",
     tags: ["Festival", "Turkey", "Live music"],
     featured: false,
@@ -351,7 +351,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2016",
     location: "Clisson, France",
-    description:"",
+    description: "",
     image: "/images/festivals/hellfest2016.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
@@ -363,7 +363,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2017",
     location: "Dinkelsbühl, Germany",
-    description:"",
+    description: "",
     image: "/images/festivals/summerbreeze2017.jpg",
     tags: ["Festival", "Memories"],
   },
@@ -374,7 +374,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2019",
     location: "Nantes, France",
-    description:"",
+    description: "",
     image: "/images/festivals/knotfest2019.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
@@ -386,7 +386,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2019",
     location: "Clisson, France",
-    description:"",
+    description: "",
     image: "/images/festivals/hellfest2019.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
@@ -398,7 +398,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2023",
     location: "Clisson, France",
-    description:"",
+    description: "",
     image: "/images/festivals/hellfest2023.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
@@ -410,7 +410,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2023",
     location: "Carhaix-Plouguer, Bretagne, France",
-    description:"",
+    description: "",
     image: "/images/festivals/motocultor2023.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
@@ -422,7 +422,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2024",
     location: "Clisson, France",
-    description:"",
+    description: "",
     image: "/images/festivals/hellfest2024.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
@@ -434,7 +434,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2024",
     location: "Josefov Fortress, Jaroměř, Czech Republic",
-    description:"",
+    description: "",
     image: "/images/festivals/brutalassault2024.jpg",
     tags: ["Festival", "Czech Republic", "Live music"],
     featured: false,
@@ -446,7 +446,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2025",
     location: "Josefov Fortress, Jaroměř, Czech Republic",
-    description:"",
+    description: "",
     image: "/images/festivals/brutalassault2025.jpg",
     tags: ["Festival", "Czech Republic", "Live music"],
     featured: false,
@@ -458,7 +458,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2026",
     location: "Tolmin, Slovenia",
-    description:"",
+    description: "",
     image: "/images/festivals/tominator2026.jpg",
     tags: ["Festival", "Slovenia", "Live music"],
     featured: true,
@@ -470,7 +470,7 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Festival edition",
     year: "2026",
     location: "Josefov Fortress, Jaroměř, Czech Republic",
-    description:"",
+    description: "",
     image: "/images/festivals/brutalassault2026.jpg",
     tags: ["Festival", "Czech Republic", "Live music"],
     featured: false,
@@ -482,88 +482,88 @@ export const archiveItems: ArchiveItem[] = [
     subtitle: "Concert edition",
     year: "2024",
     location: "Esch-sur-Alzette, Luxembourg",
-    description:"",
+    description: "",
     image: "/images/concerts/cradle-of-filth-2024.jpg",
     tags: ["Concert", "Luxembourg", "Live music"],
     featured: false,
     bandsSeenLive: ["Cradle of Filth", "Mental Cruelty", "Black Satellite"],
     images: [
-    {
-      "src": "/images/concerts/cradle/cradleoffilth.jpg",
-      "alt": "Cradle of Filth — Live",
-      "caption": "Cradle of Filth"
-    },
-    {
-      "src": "/images/concerts/cradle/mentalcruelty.jpg",
-      "alt": "Mental Cruelty — Live",
-      "caption": "Mental Cruelty"
-    }, 
-    {
-      "src": "/images/concerts/cradle/blacksatellite.jpg",
-      "alt": "Black Satellite — Live",
-      "caption": "Black Satellite"
-    },
-  ]
+      {
+        "src": "/images/concerts/cradle/cradleoffilth.jpg",
+        "alt": "Cradle of Filth — Live",
+        "caption": "Cradle of Filth"
+      },
+      {
+        "src": "/images/concerts/cradle/mentalcruelty.jpg",
+        "alt": "Mental Cruelty — Live",
+        "caption": "Mental Cruelty"
+      },
+      {
+        "src": "/images/concerts/cradle/blacksatellite.jpg",
+        "alt": "Black Satellite — Live",
+        "caption": "Black Satellite"
+      },
+    ]
   },
-    {
+  {
     id: "kreator-testament-anthrax-2024",
     collectionSlug: "concerts",
     title: "Kreator Testament Anthrax - European Tour",
     subtitle: "Concert edition",
     year: "2024",
     location: "Esch-sur-Alzette, Luxembourg",
-    description:"",
+    description: "",
     image: "/images/concerts/kreator-2024.jpg",
     tags: ["Concert", "Luxembourg", "Live music"],
     featured: false,
     bandsSeenLive: ["Kreator", "Testament", "Anthrax"],
     images: [
-    {
-      "src": "/images/concerts/kreator/kreator.jpg",
-      "alt": "Kreator — Live",
-      "caption": "Kreator"
-    },
-    {
-      "src": "/images/concerts/kreator/testament.jpg",
-      "alt": "Testament — Live",
-      "caption": "Testament"
-    }, 
-    {
-      "src": "/images/concerts/kreator/anthrax.jpg",
-      "alt": "Anthrax— Live",
-      "caption": "Anthrax"
-    },
-  ]
+      {
+        "src": "/images/concerts/kreator/kreator.jpg",
+        "alt": "Kreator — Live",
+        "caption": "Kreator"
+      },
+      {
+        "src": "/images/concerts/kreator/testament.jpg",
+        "alt": "Testament — Live",
+        "caption": "Testament"
+      },
+      {
+        "src": "/images/concerts/kreator/anthrax.jpg",
+        "alt": "Anthrax— Live",
+        "caption": "Anthrax"
+      },
+    ]
   },
-    {
+  {
     id: "judas-priest-2025",
     collectionSlug: "concerts",
     title: "Judas Priest - Shield of Pain Tour",
     subtitle: "Concert edition",
     year: "2025",
     location: "Esch-sur-Alzette, Luxembourg",
-    description:"",
+    description: "",
     image: "/images/concerts/judas-priest-2025.jpg",
     tags: ["Concert", "Luxembourg", "Live music"],
     featured: false,
     bandsSeenLive: ["Judas Priest"],
     images: [
-    {
-      "src": "/images/concerts/priest/01.jpg",
-      "alt": "Judas Priest 2025 — Live",
-      "caption": ""
-    },
-    {
-      "src": "/images/concerts/priest/02.jpg",
-      "alt": "Judas Priest 2025 — Live",
-      "caption": ""
-    }, 
-    {
-      "src": "/images/concerts/priest/03.jpg",
-      "alt": "Judas Priest 2025 — Live",
-      "caption": ""
-    },
-  ]
+      {
+        "src": "/images/concerts/priest/01.jpg",
+        "alt": "Judas Priest 2025 — Live",
+        "caption": ""
+      },
+      {
+        "src": "/images/concerts/priest/02.jpg",
+        "alt": "Judas Priest 2025 — Live",
+        "caption": ""
+      },
+      {
+        "src": "/images/concerts/priest/03.jpg",
+        "alt": "Judas Priest 2025 — Live",
+        "caption": ""
+      },
+    ]
   },
   {
     id: "echoes-of-battle-vinyl",
@@ -578,7 +578,7 @@ export const archiveItems: ArchiveItem[] = [
     featured: true,
   },
   {
-    id: "meet-and-greet-01",
+    id: "meet-and-greet-kreator",
     collectionSlug: "meet-and-greets",
     title: "An artist encounter",
     subtitle: "Meet & greet",
@@ -587,6 +587,24 @@ export const archiveItems: ArchiveItem[] = [
     description: "Document who you met, where it happened, and the story you want to remember.",
     image: "/images/meet-and-greets.svg",
     tags: ["Artist", "Memory"],
+  },
+  {
+    id: "shirt-cradle-of-filth-2024",
+    collectionSlug: "shirts",
+    title: "Cradle of Filth",
+    subtitle: "Band merchandise",
+    year: "2024",
+    location: "Esch-sur-Alzette, Luxembourg",
+    description: "A Cradle of Filth shirt from the By Order of the Dragon Tour in Luxembourg, 2024.",
+    image: "/images/shirts-hoodies/cof2024/front.jpg",
+    tags: ["Cradle of Filth", "Band", "T-Shirt"],
+    images: [
+      {
+        "src": "/images/shirts-hoodies/cof2024/back.jpg",
+        "alt": "Cradle of Filth 2024 tour shirt — back view",
+        "caption": ""
+      },
+    ]
   },
 ];
 
@@ -602,6 +620,40 @@ export function getArchiveItem(slug: string, id: string) {
   return archiveItems.find((item) => item.collectionSlug === slug && item.id === id);
 }
 
+
+// {
+//   id: "hoodie-tour-2024",
+//   collectionSlug: "shirts",
+//   title: "Tour 2024",
+//   subtitle: "Tour merchandise",
+//   year: "2024",
+//   location: "Add city or venue",
+//   description: "Tour merchandise collected along the way — a wearable memory of a night spent with live metal.",
+//   image: "/images/shirts/tour-2024.jpg",
+//   tags: ["Tour", "Merchandise", "Hoodie"],
+// },
+// {
+//   id: "shirt-hellfest-2024",
+//   collectionSlug: "shirts",
+//   title: "Hellfest 2024",
+//   subtitle: "Festival shirt",
+//   year: "2024",
+//   location: "Clisson, France",
+//   description: "A piece of Hellfest 2024 — a reminder of the bands, stages, and days that made the festival unforgettable.",
+//   image: "/images/shirts/hellfest-2024.jpg",
+//   tags: ["Hellfest", "Festival", "T-Shirt"],
+// },
+// {
+//   id: "hoodie-brutal-assault",
+//   collectionSlug: "shirts",
+//   title: "Brutal Assault",
+//   subtitle: "Festival hoodie",
+//   year: "2023",
+//   location: "Josefov, Czech Republic",
+//   description: "A Brutal Assault hoodie from a festival built around extreme music, unforgettable performances, and underground culture.",
+//   image: "/images/shirts/brutal-assault-2023.jpg",
+//   tags: ["Brutal Assault", "Festival", "Hoodie"],
+// },
 
 // {
 //   id: "signed-record-01",

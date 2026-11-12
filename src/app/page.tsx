@@ -4,6 +4,7 @@ import CollectionCard from "../components/CollectionCard";
 import ArchiveItemCard from "../components/ArchiveItemCard";
 import SectionHeading from "../components/SectionHeading";
 import { archiveItems, collections } from "../data/archive";
+import LastFmSection from "../components/LastFmSection";
 
 // Homepage: editorial introduction first, practical archive navigation second.
 export default function HomePage() {
@@ -109,6 +110,8 @@ export default function HomePage() {
           <div className="spinning-meta"><span><Disc3 size={15} /> ANALOG OBSESSION</span><span><Ticket size={15} /> PERSONAL ARCHIVE</span></div>
         </div>
       </section>
+
+        <LastFmSection />
     </>
   );
 }

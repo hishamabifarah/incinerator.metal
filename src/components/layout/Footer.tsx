@@ -1,7 +1,7 @@
 const socialLinks = [
     {
         name: "Instagram",
-        href: "https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/",
+        href: "https://www.instagram.com/incinerator.metal/",
     },
     {
         name: "Last.fm",

@@ -8,11 +8,43 @@ import type { ArchiveImage } from "../../data/archive";
 type ArchiveGalleryProps = {
   images: ArchiveImage[];
   title: string;
+  collectionSlug: string;
+};
+
+const GALLERY_COPY: Record<
+  string,
+  { lead: string; highlight: string; description: string }
+> = {
+  festivals: {
+    lead: "Through the",
+    highlight: "lens.",
+    description: "Live sets, festival atmosphere, and places along the way.",
+  },
+  concerts: {
+    lead: "The night in",
+    highlight: "frames.",
+    description: "Live performances, stage moments, and the energy of the room.",
+  },
+  vinyl: {
+    lead: "On the",
+    highlight: "turntable.",
+    description: "Album artwork, pressing details, and records from the collection.",
+  },
+  shirts: {
+    lead: "Worn with",
+    highlight: "pride.",
+    description: "Band shirts, tour designs, and the stories behind every piece.",
+  },
 };
 
 const IMAGES_PER_PAGE = 6;
 
-export default function ArchiveGallery({ images, title }: ArchiveGalleryProps) {
+export default function ArchiveGallery({
+  images,
+  title,
+  collectionSlug,
+}: ArchiveGalleryProps) {
+  const copy = GALLERY_COPY[collectionSlug] ?? GALLERY_COPY.festivals;
   const [galleryImages, setGalleryImages] = useState(images);
   const [page, setPage] = useState(1);
   const [mobileIndex, setMobileIndex] = useState(0);
@@ -80,10 +112,10 @@ export default function ArchiveGallery({ images, title }: ArchiveGalleryProps) {
       <div className="section-heading archive-gallery-heading">
         <div>
           <p className="eyebrow">MOMENTS FROM THE ARCHIVE</p>
-          <h2 id="archive-gallery-title">Through the <span>lens.</span></h2>
-          <p className="archive-gallery-intro">
-            Live sets, festival atmosphere, and places along the way.
-          </p>
+          <h2 id="archive-gallery-title">
+            {copy.lead} <span>{copy.highlight}</span>
+          </h2>
+          <p className="archive-gallery-intro">{copy.description}</p>
         </div>
         <span className="archive-gallery-count">
           {String(galleryImages.length).padStart(2, "0")} PHOTOS
