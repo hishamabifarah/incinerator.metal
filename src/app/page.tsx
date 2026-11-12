@@ -155,11 +155,11 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="THE COLLECTIONS / 01—06"
           title="Everything has a story."
-          action={
-            <Link className="inline-link" href="#explore-archive">
-              Explore archive <ArrowRight size={15} />
-            </Link>
-          }
+          // action={
+          //   <Link className="inline-link" href="#explore-archive">
+          //     Explore archive <ArrowRight size={15} />
+          //   </Link>
+          // }
         >
           Six collections, each preserving a different part of the story:
           festival weekends, physical keepsakes, records, and encounters.
