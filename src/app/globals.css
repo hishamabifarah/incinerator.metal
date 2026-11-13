@@ -3600,7 +3600,7 @@ select:focus-visible {
 
 .lastfm-featured {
   display: grid;
-  grid-template-columns: minmax(180px, .9fr) minmax(0, 1fr);
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 1fr);
   min-height: 300px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -3873,8 +3873,8 @@ select:focus-visible {
   .lastfm-featured-art,
   .lastfm-featured-art img,
   .lastfm-art-placeholder {
-    height: 230px;
-    min-height: 230px;
+    height: 300px;
+    min-height: 350px;
   }
 
   .lastfm-featured-info {
