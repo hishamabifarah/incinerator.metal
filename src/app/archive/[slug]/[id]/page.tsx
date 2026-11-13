@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowUpRight, MapPin, CalendarDays, Tag } from "lucide-react
 import { archiveItems, getArchiveItem, getCollection } from "../../../..//data/archive";
 import bandsSeenLive from "../../../../data/bands-seen-live.json";
 import ArchiveGallery from "../../../../components/archive/ArchiveGallery";
+import Image from "next/image";
 
 // Generate one detail page for every sample archive item.
 export function generateStaticParams() {
@@ -73,7 +74,15 @@ async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string
 {slug === "meet-and-greets" ? (
   <div className="detail-art detail-art-photo">
     {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img
+    {/* <img
+      src={item.image}
+      alt={`${item.title} at ${item.location}`}
+      className="detail-art-photo-image"
+      width={1054}
+      height={675}
+      fetchPriority="high"
+    /> */}
+    <Image
       src={item.image}
       alt={`${item.title} at ${item.location}`}
       className="detail-art-photo-image"

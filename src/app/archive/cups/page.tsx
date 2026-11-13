@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { ArrowLeft, Coffee, ExternalLink, ImageOff, Search } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 
 type Cup = {
   filename: string;
@@ -311,13 +312,20 @@ export default function FestivalCupsPage() {
                       aria-label={`Open image ${cup.filename} in a new tab`}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      {/* <img
                         className="cup-image"
                         src={imageUrl}
                         alt={`${formatFestivalName(cup.festivalKey)} festival cup ${cup.number}`}
                         loading="lazy"
+                      /> */}
+                      <Image
+                        className="cup-image"
+                        src={imageUrl}
+                        alt={`${formatFestivalName(cup.festivalKey)} festival cup ${cup.number}`}
+                        width={300}
+                        height={300}
+                        loading="lazy"
                       />
-
                       <span className="cup-image-open">
                         <ExternalLink size={15} aria-hidden="true" />
                       </span>

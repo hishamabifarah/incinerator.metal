@@ -19,6 +19,7 @@ import { archiveItems, collections } from "../data/archive";
 import LastFmSection from "../components/LastFmSection";
 
 import type { ArchiveItem } from "../data/archive";
+import Image from "next/image";
 
 // Fisher-Yates shuffle: returns a randomly ordered copy.
 function shuffleItems<T>(items: T[]): T[] {
@@ -199,10 +200,17 @@ export default function HomePage() {
           {spinningVinyl ? (
             <>
               {spinningVinyl.image ? (
-                <img
+                // <img
+                //   className="spinning-vinyl-artwork"
+                //   src={spinningVinyl.image}
+                //   alt={`${spinningVinyl.title} vinyl artwork`}
+                // />
+                <Image
                   className="spinning-vinyl-artwork"
                   src={spinningVinyl.image}
                   alt={`${spinningVinyl.title} vinyl artwork`}
+                  width={1200}
+                  height={420}
                 />
               ) : (
                 <div className="record-record">

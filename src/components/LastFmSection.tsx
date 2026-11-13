@@ -9,6 +9,7 @@ import {
   Headphones,
   Radio,
 } from "lucide-react";
+import Image from "next/image";
 
 type LastFmTrack = {
   name: string;
@@ -135,9 +136,11 @@ export default function LastFmSection() {
           <article className="lastfm-featured">
             <div className="lastfm-featured-art">
               {featured?.image ? (
-                <img
+                <Image
                   src={featured.image}
                   alt={`${featured.album || featured.name} album artwork`}
+                  width={200}
+                  height={200}
                 />
               ) : (
                 <div className="lastfm-art-placeholder">
@@ -216,9 +219,16 @@ export default function LastFmSection() {
                   </span>
 
                   {album.image ? (
-                    <img
+                    // <img
+                    //   src={album.image}
+                    //   alt={`${album.name} album artwork`}
+                    //   loading="lazy"
+                    // />
+                    <Image
                       src={album.image}
                       alt={`${album.name} album artwork`}
+                      width={75}
+                      height={75}
                       loading="lazy"
                     />
                   ) : (
