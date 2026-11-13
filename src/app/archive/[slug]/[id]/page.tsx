@@ -70,10 +70,29 @@ async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string
       <Link className="back-link" href={`/archive/${slug}`}><ArrowLeft size={15} /> Back to {collection.title}</Link>
 
       <section className="detail-layout">
-        <div className="detail-art" style={{ backgroundImage: `url("${item.image}")` }}>
-          <span className="detail-art-label">INCINERATOR / ARCHIVE ENTRY</span>
-          <span className="detail-art-index">{item.year}</span>
-        </div>
+{slug === "meet-and-greets" ? (
+  <div className="detail-art detail-art-photo">
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
+      src={item.image}
+      alt={`${item.title} at ${item.location}`}
+      className="detail-art-photo-image"
+      width={1054}
+      height={675}
+      fetchPriority="high"
+    />
+    <span className="detail-art-label">INCINERATOR / ARCHIVE ENTRY</span>
+    <span className="detail-art-index">{item.year}</span>
+  </div>
+) : (
+  <div
+    className="detail-art"
+    style={{ backgroundImage: `url("${item.image}")` }}
+  >
+    <span className="detail-art-label">INCINERATOR / ARCHIVE ENTRY</span>
+    <span className="detail-art-index">{item.year}</span>
+  </div>
+)}
 
         <article className="detail-copy">
           <p className="eyebrow">{collection.eyebrow} / {item.subtitle}</p>
