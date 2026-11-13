@@ -1,9 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
 import type { Collection } from "../data/archive";
 
-// A reusable collection tile. The CSS image layer supplies the visual treatment.
+// A reusable collection tile. Next Image supplies the visual background.
 export default function CollectionCard({
   collection,
   index,
@@ -17,7 +18,15 @@ export default function CollectionCard({
       href={`/archive/${collection.slug}`}
       style={{ ["--card-index" as string]: index } as CSSProperties}
     >
-      <div className="collection-card-image" style={{ backgroundImage: `url("${collection.image}")` }} />
+      <div className="collection-card-image">
+        <Image
+          src={collection.image}
+          alt=""
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="collection-card-image-media"
+        />
+      </div>
       <div className="collection-card-shade" />
       <div className="collection-card-top">
         <span>{collection.eyebrow}</span>

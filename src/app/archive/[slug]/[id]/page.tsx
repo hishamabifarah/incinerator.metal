@@ -71,37 +71,18 @@ async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string
       <Link className="back-link" href={`/archive/${slug}`}><ArrowLeft size={15} /> Back to {collection.title}</Link>
 
       <section className="detail-layout">
-{slug === "meet-and-greets" ? (
-  <div className="detail-art detail-art-photo">
-    {/* eslint-disable-next-line @next/next/no-img-element */}
-    {/* <img
-      src={item.image}
-      alt={`${item.title} at ${item.location}`}
-      className="detail-art-photo-image"
-      width={1054}
-      height={675}
-      fetchPriority="high"
-    /> */}
-    <Image
-      src={item.image}
-      alt={`${item.title} at ${item.location}`}
-      className="detail-art-photo-image"
-      width={1054}
-      height={675}
-      fetchPriority="high"
-    />
-    <span className="detail-art-label">INCINERATOR / ARCHIVE ENTRY</span>
-    <span className="detail-art-index">{item.year}</span>
-  </div>
-) : (
-  <div
-    className="detail-art"
-    style={{ backgroundImage: `url("${item.image}")` }}
-  >
-    <span className="detail-art-label">INCINERATOR / ARCHIVE ENTRY</span>
-    <span className="detail-art-index">{item.year}</span>
-  </div>
-)}
+<div className={`detail-art ${slug === "meet-and-greets" ? "detail-art-photo" : ""}`}>
+          <Image
+            src={item.image}
+            alt={`${item.title} at ${item.location}`}
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 55vw"
+            className={`detail-art-image ${slug === "meet-and-greets" ? "detail-art-photo-image" : ""}`}
+          />
+          <span className="detail-art-label">INCINERATOR / ARCHIVE ENTRY</span>
+          <span className="detail-art-index">{item.year}</span>
+        </div>
 
         <article className="detail-copy">
           <p className="eyebrow">{collection.eyebrow} / {item.subtitle}</p>

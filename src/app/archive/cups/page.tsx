@@ -176,11 +176,15 @@ export default function FestivalCupsPage() {
       </Link>
 
       <section className="archive-hero archive-hero-crimson">
-        <div
-          className="archive-hero-art"
-          style={{ backgroundImage: 'url("/images/cups-main.jpg")' }}
-          aria-hidden="true"
-        />
+        <div className="archive-hero-art" aria-hidden="true">
+          <Image
+            src="/images/cups-main.jpg"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 1240px"
+          />
+        </div>
         <div className="archive-hero-shade" />
 
         <div className="archive-hero-content">

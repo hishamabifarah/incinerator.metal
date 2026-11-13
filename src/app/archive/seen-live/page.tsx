@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { ArrowLeft, Search, SlidersHorizontal } from "lucide-react";
 import rawBands from "../../../data/bands-seen-live.json";
@@ -30,7 +31,15 @@ export default function BandsSeenLivePage() {
     <main className="page-wrap archive-page seen-live-page">
       <Link className="back-link" href="/"><ArrowLeft size={15} /> Back to home</Link>
       <section className="archive-hero archive-hero-crimson">
-        <div className="archive-hero-art" style={{ backgroundImage: 'url("/images/live.svg")' }} aria-hidden="true" />
+        <div className="archive-hero-art" aria-hidden="true">
+          <Image
+            src="/images/live.svg"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 1240px"
+          />
+        </div>
         <div className="archive-hero-shade" />
         <div className="archive-hero-content">
           <p className="eyebrow">THE LIVE INDEX / INCINERATOR ARCHIVE</p>

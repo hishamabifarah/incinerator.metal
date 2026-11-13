@@ -56,7 +56,16 @@ export default function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="hero-backdrop" aria-hidden="true" />
+        <div className="hero-backdrop" aria-hidden="true">
+          <Image
+            src="/images/festival-banner.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="hero-backdrop-image"
+          />
+        </div>
         <div className="hero-grain" aria-hidden="true" />
 
         <div className="hero-content page-wrap">

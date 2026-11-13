@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -32,7 +33,15 @@ async function CollectionContent({ params }: { params: Promise<{ slug: string }>
       <Link className="back-link" href="/"><ArrowLeft size={15} /> Back to home</Link>
 
       <section className={`archive-hero archive-hero-${collection.accent}`}>
-        <div className="archive-hero-art" style={{ backgroundImage: `url("${collection.image}")` }} aria-hidden="true" />
+        <div className="archive-hero-art" aria-hidden="true">
+          <Image
+            src={collection.image}
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 1240px"
+          />
+        </div>
         <div className="archive-hero-shade" />
         <div className="archive-hero-content">
           <p className="eyebrow">{collection.eyebrow} / INCINERATOR ARCHIVE</p>
