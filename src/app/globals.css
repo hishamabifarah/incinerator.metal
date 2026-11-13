@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap'); */
 
 /* --------------------------------------------------------------------------
    DESIGN SYSTEM
@@ -6,6 +6,8 @@
    Layout uses responsive clamps so type and spacing adapt smoothly by viewport.
    -------------------------------------------------------------------------- */
 :root {
+  --font-sans: var(--font-manrope), Arial, sans-serif;
+  --font-mono: var(--font-dm-mono), monospace;
   --bg: #0a0a0b;
   --surface: #111113;
   --surface-raised: #171719;

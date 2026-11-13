@@ -5,6 +5,21 @@ import "./globals.css";
 import VisitorTracker from "../components/analytics/VisitorTracker";
 import { getSiteUrl } from "../lib/site-url";
 import Footer from "../components/layout/Footer";
+import { Manrope, DM_Mono } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-manrope",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-dm-mono",
+});
 
 const siteUrl = getSiteUrl();
 
@@ -34,7 +49,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${manrope.variable} ${dmMono.variable}`}>
       <body>
         {children}
         <Suspense fallback={null}>
