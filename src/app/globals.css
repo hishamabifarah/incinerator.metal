@@ -873,7 +873,7 @@ select:focus-visible {
 @media (max-width: 768px) {
   .spinning-vinyl-artwork {
     width: 100%;
-    max-width: 340px;
+    max-width: 100%;
     margin-inline: auto;
   }
 }
@@ -4045,7 +4045,7 @@ select:focus-visible {
 }
 
 .detail-art-photo-image {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
