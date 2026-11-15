@@ -568,16 +568,142 @@ export const archiveItems: ArchiveItem[] = [
 
   // Vinyl entries
   {
-    id: "echoes-of-battle-vinyl",
+    id: "caladan-brood-echoes-of-battle",
     collectionSlug: "vinyl",
     title: "Caladan Brood",
     subtitle: "Echoes of Battle",
     year: "2013",
     location: "Listening room",
     description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
-    image: "/images/vinyls/vinyl-caladanbrood.jpg",
+    image: "/images/vinyls/echoesofbattle/main.jpg",
     tags: ["Vinyl", "Now spinning"],
     featured: true,
+    images: [
+      {
+        "src": "/images/vinyls/echoesofbattle/01.webp",
+        "alt": "Echoes of Battle vinyl front cover",
+        "caption": ""
+      },
+    ]
+  },
+  {
+    id: "iron-maiden-number-of-the-beast",
+    collectionSlug: "vinyl",
+    title: "Iron Maiden",
+    subtitle: "Number of the Beast",
+    year: "1980",
+    location: "Listening room",
+    description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
+    image: "/images/vinyls/numberofthebeast/01.jpg",
+    tags: ["Vinyl", "Now spinning"],
+    featured: true,
+    images: [
+      {
+        "src": "/images/vinyls/numberofthebeast/main.webp",
+        "alt": "Number of the Beast vinyl front cover",
+        "caption": ""
+      },
+    ]
+  },
+  {
+    id: "ritchie-blackmores-rainbow",
+    collectionSlug: "vinyl",
+    title: "Ritchie Blackmore's Rainbow",
+    subtitle: "Ritchie Blackmore's Rainbow",
+    year: "1975",
+    location: "Listening room",
+    description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
+    image: "/images/vinyls/rainbow/02.jpg",
+    tags: ["Vinyl", "Now spinning"],
+    featured: true,
+    images: [
+      {
+        "src": "/images/vinyls/rainbow/01.jpg",
+        "alt": "Ritchie Blackmore's Rainbow vinyl front cover",
+        "caption": ""
+      },
+    ]
+  },
+    {
+    id: "ritchie-blackmores-rainbow-rising",
+    collectionSlug: "vinyl",
+    title: "Ritchie Blackmore's Rainbow",
+    subtitle: "Rising",
+    year: "1976",
+    location: "Listening room",
+    description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
+    image: "/images/vinyls/rising/01.jpg",
+    tags: ["Vinyl", "Now spinning"],
+    featured: true,
+    images: [
+      {
+        "src": "/images/vinyls/rising/02.jpg",
+        "alt": "Ritchie Blackmore's Rainbow Rising vinyl front cover",
+        "caption": ""
+      },
+    ]
+  },
+  {
+    id: "bathory-bathory",
+    collectionSlug: "vinyl",
+    title: "Bathory",
+    subtitle: "Bathory",
+    year: "1984",
+    location: "Listening room",
+    description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
+    image: "/images/vinyls/bathory/front.webp",
+    tags: ["Vinyl", "Now spinning"],
+    featured: true,
+  },
+    {
+    id: "bathory-twilight-of-the-gods",
+    collectionSlug: "vinyl",
+    title: "Bathory",
+    subtitle: "Twilight of the Gods",
+    year: "1991",
+    location: "Listening room",
+    description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
+    image: "/images/vinyls/twilightofthegods/01.jpg",
+    tags: ["Vinyl", "Now spinning"],
+    featured: true,
+    images: [
+      {
+        "src": "/images/vinyls/twilightofthegods/02.jpg",
+        "alt": "Twilight of the Gods vinyl cover",
+        "caption": ""
+      },
+    ]
+  },
+  {
+    id: "melechesh-sphynx",
+    collectionSlug: "vinyl",
+    title: "Melechesh",
+    subtitle: "Sphynx",
+    year: "2003",
+    location: "Listening room",
+    description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
+    image: "/images/vinyls/sphynx/main.jpg",
+    tags: ["Vinyl", "Now spinning"],
+    featured: true,
+  },
+  {
+    id: "borknagar-winter-thrice",
+    collectionSlug: "vinyl",
+    title: "Borknagar",
+    subtitle: "Winter Thrice",
+    year: "2016",
+    location: "Listening room",
+    description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
+    image: "/images/vinyls/winterthrice/front.jpg",
+    tags: ["Vinyl", "Now spinning"],
+    featured: true,
+    images: [
+      {
+        "src": "/images/vinyls/winterthrice/back.jpg",
+        "alt": "Winter Thrice vinyl back cover",
+        "caption": ""
+      },
+    ]
   },
 
   // Meet & Greet entries
@@ -647,7 +773,7 @@ export const archiveItems: ArchiveItem[] = [
     "image": "/images/meet/neo.jpg",
     "tags": ["Ne Obliviscaris", "Artist", "Memory"]
   },
-    {
+  {
     "id": "immolation-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Immolation",
@@ -658,7 +784,7 @@ export const archiveItems: ArchiveItem[] = [
     "image": "/images/meet/immolation.jpg",
     "tags": ["Immolation", "Artist", "Memory"]
   },
-    {
+  {
     "id": "marduk-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Marduk",
@@ -669,7 +795,7 @@ export const archiveItems: ArchiveItem[] = [
     "image": "/images/meet/marduk.jpg",
     "tags": ["Marduk", "Artist", "Memory"]
   },
-    {
+  {
     "id": "borknagar-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Borknagar",
@@ -680,7 +806,7 @@ export const archiveItems: ArchiveItem[] = [
     "image": "/images/meet/borknagar.jpg",
     "tags": ["Borknagar", "Artist", "Memory"]
   },
-    {
+  {
     "id": "amorphis-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Amorphis",
@@ -691,7 +817,7 @@ export const archiveItems: ArchiveItem[] = [
     "image": "/images/meet/amorphis.jpg",
     "tags": ["Amorphis", "Artist", "Memory"]
   },
-    {
+  {
     "id": "der-weg-einer-freiheit-2026",
     "collectionSlug": "meet-and-greets",
     "title": "Meet & Greet with Der Weg Einer Freiheit",
