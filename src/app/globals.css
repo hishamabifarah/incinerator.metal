@@ -4062,3 +4062,93 @@ select:focus-visible {
     min-height: 0;
   }
 }
+
+/* --------------------------------------------------------------------------
+   ROUTE LOADING + PAGE ENTRANCE
+   Keep navigation feedback visible while route content is resolving.
+   -------------------------------------------------------------------------- */
+
+.route-enter {
+  min-height: 100vh;
+  animation: route-enter-in 560ms cubic-bezier(.2, .7, .2, 1) both;
+}
+
+@keyframes route-enter-in {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.route-loading {
+  min-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 100px 24px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 46%, rgba(240, 68, 75, .075), transparent 42%),
+    var(--bg);
+}
+
+.route-loading-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 34px;
+  margin-bottom: 8px;
+}
+
+.route-loading-mark span {
+  display: block;
+  width: 3px;
+  height: 13px;
+  border-radius: 3px;
+  background: var(--red);
+  transform-origin: center;
+  animation: route-loading-pulse 850ms ease-in-out infinite;
+}
+
+.route-loading-mark span:nth-child(2) {
+  height: 25px;
+  animation-delay: 120ms;
+}
+
+.route-loading-mark span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.route-loading .eyebrow {
+  color: var(--muted);
+}
+
+.route-loading-label {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  letter-spacing: .04em;
+}
+
+@keyframes route-loading-pulse {
+  0%, 100% { opacity: .35; transform: scaleY(.65); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-enter {
+    animation: none;
+  }
+
+  .route-loading-mark span {
+    animation: none;
+    opacity: .8;
+  }
+}

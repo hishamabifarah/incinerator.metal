@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import PageLoading from "../../../../components/PageLoading";
 import { ArrowLeft, ArrowUpRight, MapPin, CalendarDays, Tag } from "lucide-react";
 import { archiveItems, getArchiveItem, getCollection } from "../../../..//data/archive";
 import bandsSeenLive from "../../../../data/bands-seen-live.json";
@@ -166,7 +167,7 @@ async function ArchiveDetailContent({ params }: { params: Promise<{ slug: string
 
 export default function ArchiveDetailPage({ params }: { params: Promise<{ slug: string; id: string }> }) {
   return (
-    <Suspense fallback={<div className="page-wrap detail-page" aria-busy="true" />}>
+    <Suspense fallback={<PageLoading />}>
       <ArchiveDetailContent params={params} />
     </Suspense>
   );

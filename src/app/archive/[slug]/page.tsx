@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import PageLoading from "../../../components/PageLoading";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import ArchiveBrowser from "../../../components/ArchiveBrowser";
 import SectionHeading from "../../../components/SectionHeading";
@@ -74,7 +75,7 @@ async function CollectionContent({ params }: { params: Promise<{ slug: string }>
 
 export default function CollectionPage({ params }: { params: Promise<{ slug: string }> }) {
   return (
-    <Suspense fallback={<div className="page-wrap archive-page" aria-busy="true" />}>
+    <Suspense fallback={<PageLoading />}>
       <CollectionContent params={params} />
     </Suspense>
   );
