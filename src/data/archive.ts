@@ -343,6 +343,53 @@ export const archiveItems: ArchiveItem[] = [
     image: "/images/festivals/headbangers-weekend-2015.jpg",
     tags: ["Festival", "Turkey", "Live music"],
     featured: false,
+    images: [
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/archenemy.jpg",
+        "alt": "Arch Enemy performing at Headbangers' Weekend 2015",
+        "caption": "Arch Enemy"
+      },
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/atthegates.jpg",
+        "alt": "At the Gates performing at Headbangers' Weekend 2015",
+        "caption": "At the Gates"
+      },
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/carcass.jpg",
+        "alt": "Carcass performing at Headbangers' Weekend 2015",
+        "caption": "Carcass"
+      },
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/ensiferum.jpg",
+        "alt": "Ensiferum performing at Headbangers' Weekend 2015",
+        "caption": "Ensiferum"
+      },
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/helloween.jpg",
+        "alt": "Helloween performing at Headbangers' Weekend 2015",
+        "caption": "Helloween"
+      },
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/moonspell.jpg",
+        "alt": "Moonspell performing at Headbangers' Weekend 2015",
+        "caption": "Moonspell"
+      },
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/rottingchrist.jpg",
+        "alt": "Rotting Christ performing at Headbangers' Weekend 2015",
+        "caption": "Rotting Christ"
+      },
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/septicflesh.jpg",
+        "alt": "Septicflesh performing at Headbangers' Weekend 2015",
+        "caption": "Septicflesh"
+      },
+      {
+        "src": "/images/festivals/headbangers-weekend-2015/therion.jpg",
+        "alt": "Therion performing at Headbangers' Weekend 2015",
+        "caption": "Therion"
+      }
+    ]
   },
   {
     id: "hellfest-2016",
