@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport} from "next";
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 import "./globals.css";
@@ -23,12 +23,27 @@ const dmMono = DM_Mono({
 
 const siteUrl = getSiteUrl();
 
+export const viewport: Viewport = {
+  themeColor: "#050505"
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Incinerator Metal | A Life Measured in Riffs", template: "%s | Incinerator Metal" },
   description: "The personal metal archive of Incinerator, also known as Inci. Festivals, concerts, bands seen live, vinyl, and memories from a life shaped by metal.",
   applicationName: "Incinerator Metal",
   alternates: { canonical: "/" },
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" }
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+    ]
+  },
   openGraph: {
     type: "website",
     siteName: "Incinerator Metal",
