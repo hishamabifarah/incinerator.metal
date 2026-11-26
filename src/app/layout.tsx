@@ -50,6 +50,14 @@ export const metadata: Metadata = {
     title: "Incinerator Metal | A Life Measured in Riffs",
     description: "A Lebanese metalhead's personal archive of festivals, concerts, bands seen live, vinyl, and memories.",
     url: siteUrl,
+    images: [
+      {
+        url: '/main.png',
+        width: 1200,
+        height: 630,
+        alt: 'Incinerator Metal | A Life Measured in Riffs',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

@@ -209,17 +209,12 @@ export default function HomePage() {
           {spinningVinyl ? (
             <>
               {spinningVinyl.image ? (
-                // <img
-                //   className="spinning-vinyl-artwork"
-                //   src={spinningVinyl.image}
-                //   alt={`${spinningVinyl.title} vinyl artwork`}
-                // />
                 <Image
                   className="spinning-vinyl-artwork"
                   src={spinningVinyl.image}
                   alt={`${spinningVinyl.title} vinyl artwork`}
-                  width={1200}
-                  height={420}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               ) : (
                 <div className="record-record">

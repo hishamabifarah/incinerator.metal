@@ -842,40 +842,31 @@ select:focus-visible {
 
 .spinning-art {
   position: relative;
-  min-height: 420px;
+  aspect-ratio: 1.22 / 1;
+  min-height: 0;
+  overflow: hidden;
   display: grid;
   place-items: center;
   background: radial-gradient(ellipse at center, #242124 0, #111012 55%, #0a0a0b 75%);
   border: 1px solid var(--line);
 }
 
+/* Match the featured archive cards: the artwork fills a fixed-ratio frame. */
 .spinning-vinyl-artwork {
-  display: block;
-  width: min(100%, 560px);
-  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 4px;
-  box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
-  transition:
-    transform 0.5s ease,
-    box-shadow 0.5s ease;
+  object-position: center;
+  transition: transform .4s ease;
 }
 
 .spinning-art:hover .spinning-vinyl-artwork {
-  transform: scale(1.025);
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.14);
+  transform: scale(1.035);
 }
 
-@media (max-width: 768px) {
-  .spinning-vinyl-artwork {
-    width: 100%;
-    max-width: 100%;
-    margin-inline: auto;
-  }
+.spinning-caption {
+  z-index: 1;
+  padding: 7px 10px;
+  background: rgba(7, 7, 8, .72);
+  border: 1px solid rgba(255, 255, 255, .12);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1893,7 +1884,7 @@ select:focus-visible {
   }
 
   .spinning-art {
-    min-height: 330px;
+    aspect-ratio: 1.22 / 1;
   }
 
   .archive-page,
@@ -4060,95 +4051,5 @@ select:focus-visible {
 @media (max-width: 640px) {
   .detail-layout .detail-art-photo {
     min-height: 0;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   ROUTE LOADING + PAGE ENTRANCE
-   Keep navigation feedback visible while route content is resolving.
-   -------------------------------------------------------------------------- */
-
-.route-enter {
-  min-height: 100vh;
-  animation: route-enter-in 560ms cubic-bezier(.2, .7, .2, 1) both;
-}
-
-@keyframes route-enter-in {
-  from {
-    opacity: 0;
-    transform: translateY(9px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.route-loading {
-  min-height: 72vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 100px 24px;
-  text-align: center;
-  background:
-    radial-gradient(ellipse at 50% 46%, rgba(240, 68, 75, .075), transparent 42%),
-    var(--bg);
-}
-
-.route-loading-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  height: 34px;
-  margin-bottom: 8px;
-}
-
-.route-loading-mark span {
-  display: block;
-  width: 3px;
-  height: 13px;
-  border-radius: 3px;
-  background: var(--red);
-  transform-origin: center;
-  animation: route-loading-pulse 850ms ease-in-out infinite;
-}
-
-.route-loading-mark span:nth-child(2) {
-  height: 25px;
-  animation-delay: 120ms;
-}
-
-.route-loading-mark span:nth-child(3) {
-  animation-delay: 240ms;
-}
-
-.route-loading .eyebrow {
-  color: var(--muted);
-}
-
-.route-loading-label {
-  margin: 0;
-  color: var(--text);
-  font-size: 13px;
-  letter-spacing: .04em;
-}
-
-@keyframes route-loading-pulse {
-  0%, 100% { opacity: .35; transform: scaleY(.65); }
-  50% { opacity: 1; transform: scaleY(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .route-enter {
-    animation: none;
-  }
-
-  .route-loading-mark span {
-    animation: none;
-    opacity: .8;
   }
 }

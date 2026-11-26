@@ -698,7 +698,7 @@ export const archiveItems: ArchiveItem[] = [
     year: "1984",
     location: "Listening room",
     description: "Use this entry for an album you love, including pressing details, label, release year, and why it matters to you.",
-    image: "/images/vinyls/bathory/front.webp",
+    image: "/images/vinyls/bathory/front.png",
     tags: ["Vinyl", "Now spinning"],
     featured: true,
   },
