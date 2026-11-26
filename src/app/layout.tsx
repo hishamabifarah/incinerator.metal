@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: '/main.png',
+        url: `${siteUrl}/main.png`,
         width: 1200,
         height: 630,
         alt: 'Incinerator Metal | A Life Measured in Riffs',
