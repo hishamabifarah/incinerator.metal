@@ -2755,6 +2755,18 @@ select:focus-visible {
   }
 }
 
+@media (max-width: 700px) and (max-height: 480px) {
+  .archive-lightbox-dialog {
+    height: calc(100svh - 52px);
+    max-height: calc(100svh - 52px);
+  }
+
+  .archive-lightbox-caption {
+    padding-top: 8px;
+    font-size: 11px;
+  }
+}
+
 @media (max-width: 420px) {
   .archive-bands-grid {
     grid-template-columns: 1fr 1fr;
@@ -3080,12 +3092,37 @@ select:focus-visible {
   }
 
   .archive-lightbox {
-    padding: 18px 10px;
+    padding:
+      max(18px, env(safe-area-inset-top))
+      max(10px, env(safe-area-inset-right))
+      max(18px, env(safe-area-inset-bottom))
+      max(10px, env(safe-area-inset-left));
   }
 
   .archive-lightbox-dialog {
+    width: 100%;
+    max-width: 1100px;
+    height: min(78vh, 680px);
+    height: min(78svh, 680px);
+    max-height: calc(100svh - 72px);
+    min-height: 0;
     grid-template-columns: 34px minmax(0, 1fr) 34px;
-    height: 78vh;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .archive-lightbox-image-wrap {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .archive-lightbox-image {
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .archive-lightbox-caption {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .archive-lightbox-arrow {
@@ -4061,18 +4098,21 @@ select:focus-visible {
 
 .route-enter {
   min-height: 100vh;
-  animation: route-enter-in 560ms cubic-bezier(.2, .7, .2, 1) both;
+  /*
+   * Keep this animation opacity-only. A transform creates a containing
+   * block for fixed descendants and can trap the gallery lightbox inside
+   * the page instead of positioning it against the browser viewport.
+   */
+  animation: route-enter-in 560ms ease both;
 }
 
 @keyframes route-enter-in {
   from {
     opacity: 0;
-    transform: translateY(9px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
