@@ -33,7 +33,7 @@ export default function BandsSeenLivePage() {
       <section className="archive-hero archive-hero-crimson">
         <div className="archive-hero-art" aria-hidden="true">
           <Image
-            src="/images/live.svg"
+            src="/images/seen-live-main.jpg"
             alt=""
             fill
             priority
