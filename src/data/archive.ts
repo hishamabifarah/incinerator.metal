@@ -476,6 +476,33 @@ export const archiveItems: ArchiveItem[] = [
     image: "/images/festivals/hellfest2023.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
+    images:[
+    {
+      src: "/images/festivals/hellfest-2023/gorod.jpg",
+      alt: "Gorod performing at Hellfest 2023",
+      caption: "Gorod",
+    },
+    {
+      src: "/images/festivals/hellfest-2023/ironmaiden.jpg",
+      alt: "Iron Maiden performing at Hellfest 2023",
+      caption: "Iron Maiden",
+    },
+    {
+      src: "/images/festivals/hellfest-2023/myrath.jpg",
+      alt: "Myrath performing at Hellfest 2023",
+      caption: "Myrath",
+    },
+    {
+      src: "/images/festivals/hellfest-2023/powerwolf.jpg",
+      alt: "Powerwolf performing at Hellfest 2023",
+      caption: "Powerwolf",
+    },
+    {
+      src: "/images/festivals/hellfest-2023/saor.jpg",
+      alt: "Saor performing at Hellfest 2023",
+      caption: "Saor",
+    },
+    ]
   },
   {
     id: "motocultor-2023",
