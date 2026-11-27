@@ -425,6 +425,33 @@ export const archiveItems: ArchiveItem[] = [
     image: "/images/festivals/knotfest2019.jpg",
     tags: ["Festival", "France", "Live music"],
     featured: false,
+    images : [
+    {
+      src: "/images/festivals/knotfest-2019/amonamarth.jpg",
+      alt: "Amon Amarth performing at Knotfest Meets Hellfest 2019",
+      caption: "Amon Amarth",
+    },
+    {
+      src: "/images/festivals/knotfest-2019/behemoth.jpg",
+      alt: "Behemoth performing at Knotfest Meets Hellfest 2019",
+      caption: "Behemoth",
+    },
+    {
+      src: "/images/festivals/knotfest-2019/powerwolf.jpg",
+      alt: "Powerwolf performing at Knotfest Meets Hellfest 2019",
+      caption: "Powerwolf",
+    },
+    {
+      src: "/images/festivals/knotfest-2019/sabaton.jpg",
+      alt: "Sabaton performing at Knotfest Meets Hellfest 2019",
+      caption: "Sabaton",
+    },
+    {
+      src: "/images/festivals/knotfest-2019/slipknot.jpg",
+      alt: "Slipknot performing at Knotfest Meets Hellfest 2019",
+      caption: "Slipknot",
+    },
+  ]
   },
   {
     id: "hellfest-2019",
